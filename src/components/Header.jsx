@@ -13,13 +13,13 @@ const Header = () => {
             <div className="flex flex-col mt-4">
                 <div className="flex gap-1.5">
                     <a 
-                        className="border px-2 rounded text-white hover:underline hover:text-gray-500"
+                        className="border px-2 rounded text-white hover:underline hover:text-blue-500"
                         aria-label="Resume"
                     >
                         Resume
                     </a>
                     <a 
-                        className="text-3xl flex items-center hover:text-gray-500"
+                        className="text-3xl flex items-center hover:text-blue-500"
                         aria-label="Linkedin"
                         href="https://www.linkedin.com/in/andy-banh-a643a0278"
                     >
@@ -27,7 +27,7 @@ const Header = () => {
                     </a>
 
                     <a 
-                        className="text-3xl flex items-center hover:text-gray-500"
+                        className="text-3xl flex items-center hover:text-blue-500"
                         aria-label="Github"
                         href="https://github.com/AndyyBanh"
                     >
@@ -35,7 +35,7 @@ const Header = () => {
                     </a>
                 </div>
                 <a
-                    className="w-fit border font-semibold hover:text-gray-500 px-2 text-white rounded mt-4"
+                    className="w-fit border font-semibold hover:text-blue-500 px-2 text-white rounded mt-4"
                     href="mailto:andybanhab@gmail.com"
                 >
                     Get in Touch
