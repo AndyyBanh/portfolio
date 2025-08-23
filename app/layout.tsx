@@ -35,14 +35,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="border-b border-gray-300 p-5 flex justify-between items-center">
+          <header className="border-b border-base-300 p-5 flex justify-between items-center">
             <h1 className="text-2xl font-bold">Andy Banh</h1>
 
             <div className="flex items-center gap-4">
               <a
                 href="https://github.com/AndyyBanh"
                 aria-label="Github"
-                
+                className="transition hover:scale-120"
               >
                 <FaGithub size={24}/>
               </a>
@@ -50,6 +50,7 @@ export default function RootLayout({
               <a 
                 href="https://www.linkedin.com/in/andy-banh-a643a0278/"
                 aria-label="Linkedin"
+                className="transition hover:scale-120"
               >
                 <FaLinkedin size={24}/>
               </a>
