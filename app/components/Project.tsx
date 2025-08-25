@@ -67,6 +67,9 @@ const Project = () => {
               <Badge variant='secondary' className='shadow-2xl'>
                 Python
               </Badge>
+              <Badge variant='secondary' className='shadow-2xl'>
+                FAST API
+              </Badge>
             </div>
 
             <div className='flex justify-between'>
