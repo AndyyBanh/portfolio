@@ -4,16 +4,26 @@ import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 const Education = () => {
   return (
     <div>
-        <h2 className='text-2xl font-bold text-center'>Education</h2>
+        <h2 className='text-2xl font-bold text-center mb-2'>Education</h2>
         <div className='flex justify-center'>
             <div className='w-full max-w-3xl mx-auto'>
                 <Card className='hover:border-blue-300'>
                     <CardHeader>
-                        <CardTitle>
-                            York University
-                            2024-Present
-                        </CardTitle>
-                        <p>BSc in Computer Science</p>
+                        <div className='flex items-center gap-4'>
+                            <img
+                                src="https://oappa.ca/wp-content/uploads/2019/07/YorkULogo_Ver_rgb_square.jpg"
+                                alt='Yorku logo'
+                                className='rounded w-16 h-16'
+                            />
+                            
+                            <div className='flex flex-col'>
+                                <p className='text-xs'>2024 - 2028 (expected)</p>
+                                <CardTitle className='text-xl'>
+                                    York University
+                                </CardTitle>
+                                <p>BSc in Computer Science</p>
+                            </div>
+                        </div>
                     </CardHeader>
 
                 </Card>
