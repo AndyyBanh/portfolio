@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, CardHeader, CardTitle } from '@/components/ui/card'
+import Image from 'next/image';
 
 const Education = () => {
   return (
@@ -10,10 +11,12 @@ const Education = () => {
                 <Card className='hover:border-blue-300'>
                     <CardHeader>
                         <div className='flex items-center gap-4'>
-                            <img
-                                src="https://oappa.ca/wp-content/uploads/2019/07/YorkULogo_Ver_rgb_square.jpg"
-                                alt='Yorku logo'
-                                className='rounded w-16 h-16'
+                            <Image
+                                src='/yorkulogo.jpg'
+                                alt='Yorku Logo'
+                                width={100}
+                                height={100}
+
                             />
                             
                             <div className='flex flex-col'>
