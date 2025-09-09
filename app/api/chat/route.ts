@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
-import fs from "fs";
+import fs, { cp } from "fs";
 import path from "path";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
@@ -49,7 +49,7 @@ const cosineSimilarity = (a: number[], b: number[]) => {
 export const POST = async (req: Request) => {
     const { query } = await req.json();
 
-    const filePath = path.join(process.cwd(), "data", "portfolio.md");
+    const filePath = path.join(process.cwd(), "app", "data", "portfolio.md");
     const fileContent = fs.readFileSync(filePath, "utf-8");
     const chunks = chunkText(fileContent);
 
@@ -66,8 +66,18 @@ export const POST = async (req: Request) => {
     
     const completion = await openai.chat.completions.create({
         model: "gpt-4o-mini",
+        temperature: 0.7,
         messages: [
+            { 
+                role: "system", 
+                content: "You are a friendly, and conversational assistant that helps answer questions about Andy portfolio. Speak in third person. Use the provided context as main source of truth. Keep answer clear, concise, approachable, and conversational while staying factual. If no context does not provide a clear answer for question suggest contacting Andy for more information." 
+            },
+            { 
+                role: "user", 
+                content: `Context: ${topChunks}\n\nQuestion: ${query}`
+            }
+        ],
+    });
 
-        ]
-    })
+    return NextResponse.json({ answer: completion.choices[0].message.content });
 }
