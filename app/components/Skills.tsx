@@ -17,8 +17,9 @@ import { FaPython } from "react-icons/fa";
 import { FaNode } from "react-icons/fa";
 import { SiLangchain } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
-import { SiPostman } from "react-icons/si";
-import { SiExpress } from "react-icons/si";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { BiLogoSpringBoot } from "react-icons/bi";
+
 
 const frontendSkills = [
   { icon: <FaJava />, name: "Java"},
@@ -32,10 +33,10 @@ const frontendSkills = [
 const backendSkills = [
   { icon: <FaPython />, name: "Python" },
   { icon: <FaNode />, name: "NodeJs" },
-  { icon: <SiExpress />, name: "ExpressJs" },
+  { icon: <BiLogoSpringBoot />, name: "SpringBoot" },
   { icon: <SiLangchain />, name: "RAG/Langchain" },
   { icon: <SiMongodb />, name: "MongoDB" },
-  { icon: <SiPostman />, name: "Postman" },
+  { icon: <BiLogoPostgresql />, name: "PostgresSQL" },
 ]
 
 const Skills = () => {
