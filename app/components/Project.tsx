@@ -12,31 +12,31 @@ const Project = () => {
         <div className='grid grid-cols-2 justify-center gap-4 w-full max-w-2xl mx-auto'>
           <Card className='p-5 hover:border-blue-300'>
             <CardTitle>
-              Expense Tracker
+              Bathroom Buddy
             </CardTitle>
             <CardDescription>
-              Full Stack MERN application that allows users to track inventory, expenses, and profits.
+              Full Stack Web Application that allows clients to make requets for in demand tolietries. Allowing businesses to manage and track supplies being used.
             </CardDescription>
 
             <div className='flex flex-wrap gap-3'>
               <Badge variant='secondary' className='shadow-2xl'>
-                MongoDB
-              </Badge>
-              <Badge variant='secondary' className='shadow-2xl'>
-                Express
+                SpringBoot
               </Badge>
               <Badge variant='secondary' className='shadow-2xl'>
                 React
               </Badge>
               <Badge variant='secondary' className='shadow-2xl'>
-                NodeJs
+                PostgresSQL
+              </Badge>
+              <Badge variant='secondary' className='shadow-2xl'>
+                Supabase
               </Badge>
             </div>
 
             <div>
               <a
-                href='https://github.com/AndyyBanh/expense-tracker'
-                aria-label='Expense Tracker Project'
+                href='https://github.com/AndyyBanh/bathroombuddy'
+                aria-label='Bathroom Buddy Project'
                 className='flex items-center gap-1.5 hover:text-blue-300'
               >
                 <FaGithub /> Github
@@ -87,6 +87,41 @@ const Project = () => {
                 className='items-center hover:text-blue-300'
               >
                 Demo
+              </a>
+            </div>
+
+          </Card>
+
+          <Card className='p-5 hover:border-blue-300'>
+            <CardTitle>
+              Expense Tracker
+            </CardTitle>
+            <CardDescription>
+              Full Stack MERN application that allows users to track inventory, expenses, and profits.
+            </CardDescription>
+
+            <div className='flex flex-wrap gap-3'>
+              <Badge variant='secondary' className='shadow-2xl'>
+                MongoDB
+              </Badge>
+              <Badge variant='secondary' className='shadow-2xl'>
+                Express
+              </Badge>
+              <Badge variant='secondary' className='shadow-2xl'>
+                React
+              </Badge>
+              <Badge variant='secondary' className='shadow-2xl'>
+                NodeJs
+              </Badge>
+            </div>
+
+            <div>
+              <a
+                href='https://github.com/AndyyBanh/expense-tracker'
+                aria-label='Expense Tracker Project'
+                className='flex items-center gap-1.5 hover:text-blue-300'
+              >
+                <FaGithub /> Github
               </a>
             </div>
 
