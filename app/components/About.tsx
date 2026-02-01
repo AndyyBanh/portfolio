@@ -1,7 +1,9 @@
 import { Button } from '@/components/ui/button'
+import Image from 'next/image';
 import React from 'react'
 import { FaDownload } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+
 
 const About = () => {
   return (
