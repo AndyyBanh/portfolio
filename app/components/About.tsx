@@ -13,7 +13,7 @@ const About = () => {
         <p className='text-xs text-center'>Toronto, Canada</p>
         <p className='mt-2 text-center text-base max-w-md mx-auto'>I&apos;m a passionate <span className='font-semibold'>full stack web developer.</span> Who loves turning ideas into interactive web applications. </p>
         <div className='flex justify-center mt-4 gap-4'>
-          <a>
+          <a href='/AndyBanh_SoftwareDeveloper.pdf' download>
             <Button variant='outline' className='w-fit'>
               Resume <FaDownload />
             </Button>
