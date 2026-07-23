@@ -8,7 +8,6 @@ import {
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { AiOutlineJavaScript } from "react-icons/ai";
-import { FaJava } from "react-icons/fa6";
 import { FaReact } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import { RiTailwindCssFill } from "react-icons/ri";
@@ -19,14 +18,15 @@ import { SiLangchain } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { BiLogoSpringBoot } from "react-icons/bi";
+import { FaHtml5 } from "react-icons/fa";
 
 
 const frontendSkills = [
-  { icon: <FaJava />, name: "Java"},
   { icon: <AiOutlineJavaScript />, name: "JavaScript"},
   { icon: <SiTypescript />, name: "TypeScript"},
   { icon: <FaReact />, name: "ReactJS"},
   { icon: <RiNextjsFill />, name: "NextJs"},
+  { icon: <FaHtml5 />, name: "HTML/CSS"},
   { icon: <RiTailwindCssFill />, name: "TailwindCSS"},
 ]
 
