@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "./components/Theme-Provider";
 import { ModeToggle } from "./components/ModeToggle";
 import Footer from "./components/Footer";
+import { Reveal } from "@/components/ui/reveal";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -32,13 +33,16 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
+          disableTransitionOnChange
         >
           <header className="p-5 flex justify-between items-center">
          
             <ModeToggle />
           </header>
           {children}
-          <Footer />
+          <Reveal>
+            <Footer />
+          </Reveal>
         </ThemeProvider>
       </body>
     </html>

@@ -1,5 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import { Card, CardDescription, CardTitle } from '@/components/ui/card'
+import { HoverFocusGroup, HoverFocusItem } from '@/components/ui/hover-focus'
 import { FaGithub } from "react-icons/fa";
 
 import React from 'react'
@@ -9,8 +10,9 @@ const Project = () => {
     <div>
         <h2 className='text-2xl font-bold text-center mb-5'>Projects</h2>
 
+        <HoverFocusGroup asChild>
         <div className='grid grid-cols-2 justify-center gap-4 w-full max-w-2xl mx-auto'>
-          <Card className='p-5 hover:border-blue-300'>
+          <HoverFocusItem asChild><Card className='p-5 hover:border-blue-300'>
             <CardTitle>
               Form Coach
             </CardTitle>
@@ -47,8 +49,8 @@ const Project = () => {
                 <FaGithub /> Github
               </a>
             </div>
-          </Card>
-          <Card className='p-5 hover:border-blue-300'>
+          </Card></HoverFocusItem>
+          <HoverFocusItem asChild><Card className='p-5 hover:border-blue-300'>
             <CardTitle>
               Bathroom Buddy
             </CardTitle>
@@ -82,9 +84,9 @@ const Project = () => {
                 <FaGithub /> Github
               </a>
             </div>
-          </Card>
+          </Card></HoverFocusItem>
             
-          <Card className='p-5 hover:border-blue-300'>
+          <HoverFocusItem asChild><Card className='p-5 hover:border-blue-300'>
             <CardTitle>
               Discrete Math AI ChatBot
             </CardTitle>
@@ -129,9 +131,9 @@ const Project = () => {
               </a>
             </div>
 
-          </Card>
+          </Card></HoverFocusItem>
 
-          <Card className='p-5 hover:border-blue-300'>
+          <HoverFocusItem asChild><Card className='p-5 hover:border-blue-300'>
             <CardTitle>
               Financial API Gateway
             </CardTitle>
@@ -167,8 +169,9 @@ const Project = () => {
               </a>
             </div>
 
-          </Card>
+          </Card></HoverFocusItem>
         </div>
+        </HoverFocusGroup>
     </div>
   )
 }

@@ -39,6 +39,20 @@ const backendSkills = [
   { icon: <BiLogoPostgresql />, name: "PostgresSQL" },
 ]
 
+const SkillGrid = ({ skills }: { skills: typeof frontendSkills }) => (
+  <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center'>
+    {skills.map((skill, i) => (
+      <Badge
+        key={skill.name}
+        style={{ animationDelay: `${200 + i * 65}ms` }}
+        className='text-base flex items-center gap-2 hover:border-blue-300 hover:scale-110 transition animate-in fade-in slide-in-from-bottom-2 fill-mode-backwards duration-400'
+      >
+        {skill.icon} {skill.name}
+      </Badge>
+    ))}
+  </div>
+)
+
 const Skills = () => {
   return (
     <div>
@@ -52,36 +66,16 @@ const Skills = () => {
                     </TabsList>
                 </div>
 
-                <TabsContent value='frontend'>
-                    <Card className='w-full max-w-3xl mx-auto p-6'>
-                      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center'>
-                        {frontendSkills.map((skill) =>
-                          <Badge
-                            key={skill.name}
-                            className='text-base flex items-center gap-2 hover:border-blue-300 hover:scale-110 transition'
-                          >
-                            {skill.icon} {skill.name}
-                          </Badge>
-                        )}
-                      </div>
-                    </Card>
-
-                </TabsContent>
-                <TabsContent value='backend'>
-                    <Card className='w-full max-w-3xl mx-auto p-6'>
-                      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center'>
-                        {backendSkills.map((skill) => 
-                          <Badge
-                            key={skill.name}
-                            className='text-base flex items-center gap-2 hover:border-blue-300 hover:scale-110 transition'
-                          >
-                            {skill.icon} {skill.name}
-                          </Badge>
-                        )}
-                      </div>
-
-                    </Card>
-                </TabsContent>
+                <Card className='w-full max-w-3xl mx-auto p-6'>
+                    <div className='grid'>
+                        <TabsContent value='frontend' className='col-start-1 row-start-1'>
+                            <SkillGrid skills={frontendSkills} />
+                        </TabsContent>
+                        <TabsContent value='backend' className='col-start-1 row-start-1'>
+                            <SkillGrid skills={backendSkills} />
+                        </TabsContent>
+                    </div>
+                </Card>
             </Tabs>
     </div>
   )

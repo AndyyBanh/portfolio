@@ -57,7 +57,14 @@ function TabsContent({
   return (
     <TabsPrimitive.Content
       data-slot="tabs-content"
-      className={cn("flex-1 outline-none", className)}
+      className={cn(
+        // Exit only — entering content animates its own children instead, so a
+        // panel-level fade-in would muddy that. The exit must be an animation,
+        // not a transition: Radix Presence defers unmount by watching
+        // animationName, and ignores transitions entirely.
+        "flex-1 outline-none duration-200 data-[state=inactive]:animate-out data-[state=inactive]:fade-out-0 data-[state=inactive]:pointer-events-none",
+        className
+      )}
       {...props}
     />
   )
