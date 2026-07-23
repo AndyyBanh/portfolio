@@ -1,5 +1,4 @@
 import About from "./components/About";
-import Chatbot from "./components/Chatbot";
 import Education from "./components/Education";
 import Project from "./components/Project";
 import Skills from "./components/Skills";
@@ -18,8 +17,6 @@ export default function Home() {
         <Project />
         <Education />
       </div>
-
-      {/* removing feature for now <Chatbot /> */} 
     </div>
   );
 }
