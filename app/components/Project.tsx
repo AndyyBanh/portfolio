@@ -67,7 +67,10 @@ const Project = () => {
                 PostgresSQL
               </Badge>
               <Badge variant='secondary' className='shadow-2xl'>
-                Supabase
+                Redis
+              </Badge>
+              <Badge variant='secondary' className='shadow-2xl'>
+                Unit-Testing
               </Badge>
             </div>
             <div>
@@ -130,31 +133,34 @@ const Project = () => {
 
           <Card className='p-5 hover:border-blue-300'>
             <CardTitle>
-              Expense Tracker
+              Financial API Gateway
             </CardTitle>
             <CardDescription>
-              Full Stack MERN application that allows users to track inventory, expenses, and profits.
+              API gateway that routes, authenticates, and rate-limits requests to downstream financial services.
             </CardDescription>
 
             <div className='flex flex-wrap gap-3'>
               <Badge variant='secondary' className='shadow-2xl'>
-                MongoDB
+                Spring Boot
               </Badge>
               <Badge variant='secondary' className='shadow-2xl'>
-                Express
+                Redis
               </Badge>
               <Badge variant='secondary' className='shadow-2xl'>
-                React
+                PostgreSQL
               </Badge>
               <Badge variant='secondary' className='shadow-2xl'>
-                NodeJs
+                Docker
+              </Badge>
+              <Badge variant='secondary' className='shadow-2xl'>
+                Kafka
               </Badge>
             </div>
 
             <div>
               <a
-                href='https://github.com/AndyyBanh/expense-tracker'
-                aria-label='Expense Tracker Project'
+                href='https://github.com/AndyyBanh/financial-api-gateway'
+                aria-label='Financial API Gateway Project'
                 className='flex items-center gap-1.5 hover:text-blue-300'
               >
                 <FaGithub /> Github

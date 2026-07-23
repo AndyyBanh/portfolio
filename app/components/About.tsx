@@ -8,12 +8,12 @@ import { MdEmail } from "react-icons/md";
 const About = () => {
   return (
     <div className='grid grid-cols-1'>
-        <h2 className='text-2xl font-bold text-center'>About Me</h2>
-        <p className='text-sm text-center'>Computer Science Student @YorkU</p>
+        <h2 className='text-2xl font-bold text-center'>hi i'm andy</h2>
+        <p className='text-sm text-center'>CS @YorkU</p>
         <p className='text-xs text-center'>Toronto, Canada</p>
-        <p className='mt-2 text-center text-base max-w-md mx-auto'>I&apos;m a passionate <span className='font-semibold'>full stack web developer.</span> Who loves turning ideas into interactive web applications. </p>
+        <p className='mt-2 text-center text-base max-w-md mx-auto'>typical cs student who spends countless hours on leetcode and building</p>
         <div className='flex justify-center mt-4 gap-4'>
-          <a href='/AndyBanh_SoftwareDeveloper.pdf' download>
+          <a href='/AndyBanh_SoftwareDeveloper_V5.pdf' download>
             <Button variant='outline' className='w-fit'>
               Resume <FaDownload />
             </Button>

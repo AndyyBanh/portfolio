@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/Theme-Provider";
 import { ModeToggle } from "./components/ModeToggle";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import Footer from "./components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -28,36 +27,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${inter.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
         >
-          <header className="border-b border-base-300 p-5 flex justify-between items-center">
-            <h1 className="text-2xl font-bold">Andy Banh</h1>
-
-            <div className="flex items-center gap-4">
-              <a
-                href="https://github.com/AndyyBanh"
-                aria-label="Github"
-                className="transition hover:scale-120"
-              >
-                <FaGithub size={24}/>
-              </a>
-
-              <a 
-                href="https://www.linkedin.com/in/andy-banh-a643a0278/"
-                aria-label="Linkedin"
-                className="transition hover:scale-120"
-              >
-                <FaLinkedin size={24}/>
-              </a>
-              <ModeToggle />
-            </div>
+          <header className="p-5 flex justify-between items-center">
+         
+            <ModeToggle />
           </header>
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

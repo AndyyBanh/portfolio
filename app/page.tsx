@@ -19,7 +19,7 @@ export default function Home() {
         <Education />
       </div>
 
-      <Chatbot />
+      {/* removing feature for now <Chatbot /> */} 
     </div>
   );
 }

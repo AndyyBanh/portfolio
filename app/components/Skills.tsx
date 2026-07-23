@@ -13,8 +13,8 @@ import { FaReact } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiTypescript } from "react-icons/si";
-import { FaPython } from "react-icons/fa";
-import { FaNode } from "react-icons/fa";
+import { SiFastapi } from "react-icons/si";
+import { SiRedis } from "react-icons/si";
 import { SiLangchain } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
@@ -31,9 +31,9 @@ const frontendSkills = [
 ]
 
 const backendSkills = [
-  { icon: <FaPython />, name: "Python" },
-  { icon: <FaNode />, name: "NodeJs" },
   { icon: <BiLogoSpringBoot />, name: "SpringBoot" },
+  { icon: <SiFastapi />, name: "FastAPI" },
+  { icon: <SiRedis />, name: "Redis" },
   { icon: <SiLangchain />, name: "RAG/Langchain" },
   { icon: <SiMongodb />, name: "MongoDB" },
   { icon: <BiLogoPostgresql />, name: "PostgresSQL" },
