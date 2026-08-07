@@ -13,7 +13,7 @@ import { cn } from '@/lib/utils'
 const experiences = [
   {
     role: "Software Developer Co-op",
-    company: "Company",
+    company: "GoodLife Fitness",
     period: "Upcoming Fall 2026",
     description: "adding soon! super excited!",
   },
