@@ -8,28 +8,45 @@ import { Reveal } from "@/components/ui/reveal";
 
 export default function Home() {
   return (
-    <div className="font-sans items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <Reveal>
-        <About />
-      </Reveal>
-      <Reveal delay={100} className="flex items-center justify-center mt-8">
-        <img src="https://ghchart.rshah.org/AndyyBanh" alt="AndyyBanh's Github chart"/>
-      </Reveal>
+    <div className="font-sans">
+      <section
+        id="about"
+        className="scroll-mt-16 min-h-[60vh] flex flex-col items-center justify-center px-8 py-12"
+      >
+        <Reveal className="w-full max-w-4xl">
+          <About />
+        </Reveal>
+      </section>
 
-      <div className="mt-20 space-y-20">
+      <section
+        id="experience"
+        className="scroll-mt-16 min-h-[60vh] flex flex-col justify-center px-8 py-12"
+      >
         <Reveal delay={200}>
           <Experience />
         </Reveal>
+      </section>
+
+      <section className="scroll-mt-16 flex flex-col justify-center px-8 py-6">
         <Reveal>
           <Skills />
         </Reveal>
+      </section>
+
+      <section
+        id="projects"
+        className="scroll-mt-16 min-h-[60vh] flex flex-col justify-center px-8 py-12"
+      >
         <Reveal>
           <Project />
         </Reveal>
+      </section>
+
+      <section className="scroll-mt-16 flex flex-col justify-center px-8 py-6">
         <Reveal>
           <Education />
         </Reveal>
-      </div>
+      </section>
     </div>
   );
 }

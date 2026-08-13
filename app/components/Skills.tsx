@@ -1,11 +1,4 @@
 import React from 'react'
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs"
-import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { AiOutlineJavaScript } from "react-icons/ai";
 import { FaReact } from "react-icons/fa";
@@ -19,64 +12,81 @@ import { SiMongodb } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { FaHtml5 } from "react-icons/fa";
+import { SiApachekafka } from "react-icons/si";
+import { SiVercel } from "react-icons/si";
+import { SiClaude } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
 
 
-const frontendSkills = [
+const skills = [
   { icon: <AiOutlineJavaScript />, name: "JavaScript"},
   { icon: <SiTypescript />, name: "TypeScript"},
   { icon: <FaReact />, name: "ReactJS"},
   { icon: <RiNextjsFill />, name: "NextJs"},
   { icon: <FaHtml5 />, name: "HTML/CSS"},
   { icon: <RiTailwindCssFill />, name: "TailwindCSS"},
-]
-
-const backendSkills = [
+  { icon: <TbBrandCSharp />, name: "C#" },
   { icon: <BiLogoSpringBoot />, name: "SpringBoot" },
   { icon: <SiFastapi />, name: "FastAPI" },
   { icon: <SiRedis />, name: "Redis" },
   { icon: <SiLangchain />, name: "RAG/Langchain" },
   { icon: <SiMongodb />, name: "MongoDB" },
   { icon: <BiLogoPostgresql />, name: "PostgresSQL" },
+  { icon: <SiApachekafka />, name: "Kafka" },
+  { icon: <SiVercel />, name: "Vercel" },
+  { icon: <SiClaude />, name: "Claude Code" },
 ]
 
-const SkillGrid = ({ skills }: { skills: typeof frontendSkills }) => (
-  <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center'>
-    {skills.map((skill, i) => (
-      <Badge
-        key={skill.name}
-        style={{ animationDelay: `${200 + i * 65}ms` }}
-        className='text-base flex items-center gap-2 hover:border-blue-300 hover:scale-110 transition animate-in fade-in slide-in-from-bottom-2 fill-mode-backwards duration-400'
-      >
-        {skill.icon} {skill.name}
-      </Badge>
-    ))}
+const mid = Math.ceil(skills.length / 2)
+const topRow = skills.slice(0, mid)
+const bottomRow = skills.slice(mid)
+
+const SkillRow = ({
+  skills,
+  direction,
+  duration,
+}: {
+  skills: typeof topRow
+  direction: "left" | "right"
+  duration: string
+}) => (
+  <div className='marquee w-full'>
+    <div
+      className='marquee-track'
+      data-direction={direction}
+      style={{ "--marquee-duration": duration } as React.CSSProperties}
+    >
+      {/* Two identical halves — that's what makes the -50% translate loop invisibly. */}
+      {[0, 1].map((half) => (
+        <div key={half} className='flex gap-4 pr-4' aria-hidden={half === 1}>
+          {/* listed twice per half so a 6-pill row still overflows wide viewports */}
+          {[...skills, ...skills].map((skill, i) => (
+            <Badge
+              key={`${skill.name}-${i}`}
+              variant='outline'
+              className='gap-2 rounded-full px-4 py-2 text-sm sm:text-base [&>svg]:size-4 transition hover:border-blue-300'
+            >
+              {skill.icon} {skill.name}
+            </Badge>
+          ))}
+        </div>
+      ))}
+    </div>
   </div>
 )
 
 const Skills = () => {
   return (
-    <div>
-        <h2 className='text-2xl font-bold text-center mb-6'>Skills</h2>
-        
-            <Tabs defaultValue='frontend'>
-                <div className='flex justify-center mb-4'>
-                    <TabsList className='w-full max-w-3xl mx-auto'>
-                        <TabsTrigger value='frontend'>Frontend</TabsTrigger>
-                        <TabsTrigger value='backend'>Backend</TabsTrigger>
-                    </TabsList>
-                </div>
+    <div className='w-full max-w-4xl mx-auto flex flex-col gap-4'>
+        <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>Tech Stack</h2>
+        <p className='text-base text-muted-foreground max-w-2xl'>
+          The languages, frameworks, and tools I reach for when building full stack products.
+        </p>
 
-                <Card className='w-full max-w-3xl mx-auto p-6'>
-                    <div className='grid'>
-                        <TabsContent value='frontend' className='col-start-1 row-start-1'>
-                            <SkillGrid skills={frontendSkills} />
-                        </TabsContent>
-                        <TabsContent value='backend' className='col-start-1 row-start-1'>
-                            <SkillGrid skills={backendSkills} />
-                        </TabsContent>
-                    </div>
-                </Card>
-            </Tabs>
+        <div className='mt-2 flex flex-col gap-4'>
+          <SkillRow skills={topRow} direction='left' duration='40s' />
+          <SkillRow skills={bottomRow} direction='right' duration='46s' />
+        </div>
     </div>
   )
 }

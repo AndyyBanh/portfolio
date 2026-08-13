@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/Theme-Provider";
-import { ModeToggle } from "./components/ModeToggle";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -35,10 +35,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="p-5 flex justify-between items-center">
-         
-            <ModeToggle />
-          </header>
+          <Navbar />
           {children}
           <Reveal>
             <Footer />
