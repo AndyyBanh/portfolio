@@ -2,16 +2,20 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { HoverFocusGroup, HoverFocusItem } from '@/components/ui/hover-focus'
 import { FaGithub } from "react-icons/fa";
+import PageLink from './PageLink'
 
 import React from 'react'
 
-const Project = () => {
+const Project = ({ pageHref }: { pageHref?: string }) => {
   return (
     <div>
-        <h2 className='text-2xl font-bold text-center mb-5'>Projects</h2>
+        <div className='flex flex-wrap items-center justify-center gap-2 mb-5'>
+          <h2 className='text-2xl font-bold'>Projects</h2>
+          {pageHref && <PageLink href={pageHref} />}
+        </div>
 
         <HoverFocusGroup asChild>
-        <div className='grid grid-cols-2 justify-center gap-4 w-full max-w-2xl mx-auto'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 justify-center gap-4 w-full max-w-2xl mx-auto'>
           <HoverFocusItem asChild><Card className='p-5 hover:border-blue-300'>
             <CardTitle>
               Form Coach

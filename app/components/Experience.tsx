@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/tooltip'
 import { HoverFocusGroup, HoverFocusItem } from '@/components/ui/hover-focus'
 import { cn } from '@/lib/utils'
+import PageLink from './PageLink'
 
 const experiences = [
   {
@@ -37,10 +38,13 @@ const experiences = [
   },
 ]
 
-const Experience = () => {
+const Experience = ({ pageHref }: { pageHref?: string }) => {
   return (
     <div>
-      <h2 className='text-2xl font-bold text-center mb-6'>Experience</h2>
+      <div className='flex flex-wrap items-center justify-center gap-2 mb-6'>
+        <h2 className='text-2xl font-bold'>Experience</h2>
+        {pageHref && <PageLink href={pageHref} />}
+      </div>
 
       <div className='relative w-full max-w-3xl mx-auto'>
         <div

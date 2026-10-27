@@ -1,6 +1,7 @@
 import React from 'react'
-import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
+import PageLink from './PageLink'
 
 const socials = [
   { icon: FaGithub, href: "https://github.com/AndyyBanh", label: "Github" },
@@ -9,11 +10,10 @@ const socials = [
     href: "https://www.linkedin.com/in/andy-banh-a643a0278/",
     label: "Linkedin",
   },
-  { icon: FaInstagram, href: "https://www.instagram.com/", label: "Instagram" },
   { icon: FaEnvelope, href: "mailto:andybanhab@gmail.com", label: "Email" },
 ]
 
-const About = () => {
+const About = ({ pageHref }: { pageHref?: string }) => {
   return (
     <div className='w-full flex flex-col items-start gap-6 text-left'>
         <div className='flex flex-wrap items-center gap-x-4 gap-y-2'>
@@ -21,6 +21,7 @@ const About = () => {
           <span className='flex items-center gap-1 text-sm text-muted-foreground'>
             <MdLocationOn /> Toronto, Canada
           </span>
+          {pageHref && <PageLink href={pageHref} />}
         </div>
 
         <h2 className='text-xl sm:text-2xl font-medium text-muted-foreground'>

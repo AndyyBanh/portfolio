@@ -16,7 +16,7 @@ const Education = () => {
                                 alt='Yorku Logo'
                                 width={100}
                                 height={100}
-
+                                className='size-16 sm:size-[100px] shrink-0'
                             />
                             
                             <div className='flex flex-col'>
