@@ -29,7 +29,7 @@ const About = ({ pageHref }: { pageHref?: string }) => {
         </h2>
 
         <p className='text-base sm:text-lg max-w-2xl'>
-          Incoming Software Developer Co-op at GoodLife Fitness, studying @ YorkU
+          Current Software Developer Co-op at GoodLife Fitness, studying @ YorkU
         </p>
 
         <div className='flex items-center gap-6'>

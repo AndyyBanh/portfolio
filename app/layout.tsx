@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "./components/Theme-Provider";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import BackButton from "./components/BackButton";
 import { Reveal } from "@/components/ui/reveal";
 
 const inter = Inter({
@@ -36,6 +37,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
+          <BackButton />
           {children}
           <Reveal>
             <Footer />

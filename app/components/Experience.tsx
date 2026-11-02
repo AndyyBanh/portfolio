@@ -15,8 +15,8 @@ const experiences = [
   {
     role: "Software Developer Co-op",
     company: "GoodLife Fitness",
-    period: "Upcoming Fall 2026",
-    description: "adding soon! super excited!",
+    period: "Sept 2026 - Present",
+    description: ".NET Developer",
   },
   {
     role: "Software Developer Intern",

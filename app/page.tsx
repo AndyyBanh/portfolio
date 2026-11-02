@@ -14,7 +14,7 @@ export default function Home() {
     <div className="font-sans">
       <section
         id="about"
-        className="scroll-mt-16 min-h-[60vh] flex flex-col items-center justify-center px-4 sm:px-8 py-12"
+        className="scroll-mt-16 min-h-[50vh] flex flex-col items-center justify-center px-4 sm:px-8 py-10"
       >
         <Reveal className="w-full max-w-4xl">
           <About pageHref="/about" />
@@ -23,7 +23,7 @@ export default function Home() {
 
       <section
         id="goals"
-        className="scroll-mt-16 min-h-[60vh] flex flex-col justify-center px-4 sm:px-8 py-12"
+        className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-10"
       >
         <Reveal>
           <Goals pageHref="/goals" />
@@ -32,7 +32,7 @@ export default function Home() {
 
       <section
         id="experience"
-        className="scroll-mt-16 min-h-[60vh] flex flex-col justify-center px-4 sm:px-8 py-12"
+        className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-10"
       >
         <Reveal delay={200}>
           <Experience pageHref="/experience" />
@@ -47,7 +47,7 @@ export default function Home() {
 
       <section
         id="projects"
-        className="scroll-mt-16 min-h-[60vh] flex flex-col justify-center px-4 sm:px-8 py-12"
+        className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-10"
       >
         <Reveal>
           <Project pageHref="/projects" />
@@ -56,7 +56,7 @@ export default function Home() {
 
       <section
         id="portfolio"
-        className="scroll-mt-16 min-h-[60vh] flex flex-col justify-center px-4 sm:px-8 py-12"
+        className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-10"
       >
         <Reveal>
           <WorkPortfolio pageHref="/portfolio" />
@@ -71,7 +71,7 @@ export default function Home() {
 
       <section
         id="contact"
-        className="scroll-mt-16 min-h-[60vh] flex flex-col justify-center px-4 sm:px-8 py-12"
+        className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-10"
       >
         <Reveal>
           <Contact pageHref="/contact" />

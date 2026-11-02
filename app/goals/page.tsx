@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Goals from "../components/Goals";
+import GoalsRoadmap from "../components/GoalsRoadmap";
 import { Reveal } from "@/components/ui/reveal";
 
 export const metadata: Metadata = {
@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 export default function GoalsPage() {
   return (
     <div className="font-sans">
-      <section className="min-h-[60vh] flex flex-col justify-center px-4 sm:px-8 py-12">
-        <Reveal>
-          <Goals />
+      <section className="flex flex-col items-center px-4 sm:px-8 pt-16 pb-16">
+        <Reveal className="w-full">
+          <GoalsRoadmap />
         </Reveal>
       </section>
     </div>
