@@ -10,33 +10,7 @@ import {
 import { HoverFocusGroup, HoverFocusItem } from '@/components/ui/hover-focus'
 import { cn } from '@/lib/utils'
 import PageLink from './PageLink'
-
-const experiences = [
-  {
-    role: "Software Developer Co-op",
-    company: "GoodLife Fitness",
-    period: "Sept 2026 - Present",
-    description: ".NET Developer",
-  },
-  {
-    role: "Software Developer Intern",
-    company: "Noble Solutions via Riipen",
-    period: "Feb 2026 - April 2026",
-    description: "Contributed to small real estate platform, earning 5-star feedback on Riipen",
-  },
-  {
-    role: "B.S Computer Science",
-    company: "York University",
-    period: "Sep 2024 - Present",
-    description: "being studious",
-  },
-  {
-    role: "Sole Proprietor",
-    company: "Self-employed",
-    period: "April 2025 - Present",
-    description: "Founded an ecommerce business, managing full operations, selling over 500+ products",
-  },
-]
+import { experiences } from '../data/experience'
 
 const Experience = ({ pageHref }: { pageHref?: string }) => {
   return (

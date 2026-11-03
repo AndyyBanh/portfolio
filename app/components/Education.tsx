@@ -1,6 +1,14 @@
 import React from 'react'
-import { Card, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 import Image from 'next/image';
+
+const courses = [
+  "Advanced OOP",
+  "Data Structures and Algorithms",
+  "Theory of Computation",
+  "Introduction to Database Systems",
+]
 
 const Education = () => {
   return (
@@ -29,6 +37,16 @@ const Education = () => {
                         </div>
                     </CardHeader>
 
+                    <CardContent>
+                        <p className='text-sm font-semibold mb-2'>Relevant Courses</p>
+                        <ul className='flex flex-wrap gap-2'>
+                            {courses.map((course) => (
+                                <li key={course}>
+                                    <Badge variant='secondary'>{course}</Badge>
+                                </li>
+                            ))}
+                        </ul>
+                    </CardContent>
                 </Card>
             </div>
         </div>

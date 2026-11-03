@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Experience from "../components/Experience";
+import ExperienceSections from "../components/ExperienceSections";
 import { Reveal } from "@/components/ui/reveal";
 
 export const metadata: Metadata = {
@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 export default function ExperiencePage() {
   return (
     <div className="font-sans">
-      <section className="min-h-[60vh] flex flex-col justify-center px-4 sm:px-8 py-12">
+      <section className="min-h-[60vh] px-4 sm:px-8 py-12">
         <Reveal>
-          <Experience />
+          <ExperienceSections />
         </Reveal>
       </section>
     </div>

@@ -1,8 +1,9 @@
 import React from 'react'
-import { FaGithub, FaLinkedin, FaEnvelope, FaFileAlt } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { HoverFocusGroup, HoverFocusItem } from '@/components/ui/hover-focus'
 import PageLink from './PageLink'
+import { cn } from '@/lib/utils'
 
 const contacts = [
   { icon: FaEnvelope, label: "Email", value: "andybanhab@gmail.com", href: "mailto:andybanhab@gmail.com" },
@@ -13,7 +14,6 @@ const contacts = [
     href: "https://www.linkedin.com/in/andy-banh-a643a0278/",
   },
   { icon: FaGithub, label: "GitHub", value: "AndyyBanh", href: "https://github.com/AndyyBanh" },
-  { icon: FaFileAlt, label: "Resume", value: "View PDF", href: "/AndyBanh_SoftwareDeveloper_v5.pdf" },
 ]
 
 const Contact = ({ pageHref }: { pageHref?: string }) => {
@@ -29,13 +29,13 @@ const Contact = ({ pageHref }: { pageHref?: string }) => {
 
       <HoverFocusGroup asChild>
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl mx-auto'>
-          {contacts.map(({ icon: Icon, label, value, href }) => (
+          {contacts.map(({ icon: Icon, label, value, href }, i) => (
             <HoverFocusItem key={label} asChild>
               <a
                 href={href}
-                target={href.startsWith("http") || href.endsWith(".pdf") ? "_blank" : undefined}
+                target={href.startsWith("http") ? "_blank" : undefined}
                 rel='noopener noreferrer'
-                className='rounded-xl'
+                className={cn('rounded-xl', i === 0 && 'sm:col-span-2')}
               >
                 <Card className='flex-row items-center gap-4 p-5 hover:border-blue-300'>
                   <Icon size={24} className='shrink-0' />

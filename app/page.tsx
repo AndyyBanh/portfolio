@@ -1,5 +1,4 @@
 import About from "./components/About";
-import Contact from "./components/Contact";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Goals from "./components/Goals";
@@ -22,15 +21,6 @@ export default function Home() {
       </section>
 
       <section
-        id="goals"
-        className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-10"
-      >
-        <Reveal>
-          <Goals pageHref="/goals" />
-        </Reveal>
-      </section>
-
-      <section
         id="experience"
         className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-10"
       >
@@ -46,6 +36,15 @@ export default function Home() {
       </section>
 
       <section
+        id="portfolio"
+        className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-10"
+      >
+        <Reveal>
+          <WorkPortfolio pageHref="/portfolio" />
+        </Reveal>
+      </section>
+
+      <section
         id="projects"
         className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-10"
       >
@@ -55,26 +54,17 @@ export default function Home() {
       </section>
 
       <section
-        id="portfolio"
+        id="goals"
         className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-10"
       >
         <Reveal>
-          <WorkPortfolio pageHref="/portfolio" />
+          <Goals pageHref="/goals" />
         </Reveal>
       </section>
 
       <section className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-6">
         <Reveal>
           <Education />
-        </Reveal>
-      </section>
-
-      <section
-        id="contact"
-        className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-10"
-      >
-        <Reveal>
-          <Contact pageHref="/contact" />
         </Reveal>
       </section>
     </div>

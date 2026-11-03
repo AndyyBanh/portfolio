@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${inter.variable} ${geistMono.variable} antialiased min-h-dvh flex flex-col`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -38,7 +38,7 @@ export default function RootLayout({
         >
           <Navbar />
           <BackButton />
-          {children}
+          <main className="flex-1">{children}</main>
           <Reveal>
             <Footer />
           </Reveal>
