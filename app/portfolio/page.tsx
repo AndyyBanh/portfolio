@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <div className="font-sans">
-      <section className="min-h-[60vh] flex flex-col justify-center px-4 sm:px-8 py-12">
+      <section className="min-h-[60vh] px-4 sm:px-8 py-12">
         <Reveal>
-          <WorkPortfolio />
+          <WorkPortfolio showEvidence />
         </Reveal>
       </section>
     </div>

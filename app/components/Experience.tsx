@@ -10,6 +10,7 @@ import {
 import { HoverFocusGroup, HoverFocusItem } from '@/components/ui/hover-focus'
 import { cn } from '@/lib/utils'
 import PageLink from './PageLink'
+import ResumeCard from './ResumeCard'
 import { experiences } from '../data/experience'
 
 const Experience = ({ pageHref }: { pageHref?: string }) => {
@@ -68,6 +69,8 @@ const Experience = ({ pageHref }: { pageHref?: string }) => {
           </ol>
         </HoverFocusGroup>
       </div>
+
+      <ResumeCard className='max-w-2xl mx-auto mt-8' />
     </div>
   )
 }

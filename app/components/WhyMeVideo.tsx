@@ -1,4 +1,6 @@
 import React from 'react'
+import ArtifactCaption from './ArtifactCaption'
+import { artifacts } from '../data/artifacts'
 
 const YOUTUBE_ID = "vxZnKNezrrs"
 
@@ -20,6 +22,8 @@ const WhyMeVideo = () => {
           className='w-full h-full'
         />
       </div>
+
+      <ArtifactCaption {...artifacts.whyMe} />
     </div>
   )
 }

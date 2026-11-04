@@ -1,36 +1,93 @@
 import React from 'react'
-import { Download, FileText } from 'lucide-react'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Card, CardDescription, CardTitle } from '@/components/ui/card'
-import { HoverFocusGroup, HoverFocusItem } from '@/components/ui/hover-focus'
+import { ArrowUpRight, Star } from 'lucide-react'
+import ArtifactCaption from './ArtifactCaption'
 import PageLink from './PageLink'
+import { Logo } from './SectionParts'
+import { experiences } from '../data/experience'
+import { portfolio, type PortfolioFeedback, type PortfolioLink } from '../data/portfolio'
 
-const resumeHref = "/AndyBanh_SoftwareDeveloper_v5.pdf"
+function LinkRow({ link }: { link: PortfolioLink }) {
+  const meta = [link.note, !link.href && 'Link coming soon']
+    .filter(Boolean)
+    .join(' · ')
 
-// Placeholder work samples — swap in real deliverables as you collect them.
-const workSamples: {
-  title: string
-  company: string
-  description: string
-  tags: string[]
-  href?: string
-}[] = [
-  {
-    title: "Real estate platform features",
-    company: "Noble Solutions via Riipen",
-    description: "Features and fixes delivered for a small real estate platform, earning 5-star feedback on Riipen.",
-    tags: ["Full Stack", "Client Work"],
-  },
-  {
-    title: "Co-op work samples",
-    company: "GoodLife Fitness",
-    description: "Coming Fall 2026 — samples of my co-op work will be added here.",
-    tags: ["Co-op"],
-  },
-]
+  const content = (
+    <>
+      <span className='flex items-center justify-between gap-3'>
+        <span className='font-medium'>{link.title}</span>
+        {link.href && <ArrowUpRight className='size-4 shrink-0 text-muted-foreground' />}
+      </span>
+      <span className='mt-0.5 block text-xs sm:text-sm text-muted-foreground break-words'>
+        {meta}
+      </span>
+    </>
+  )
 
-const WorkPortfolio = ({ pageHref }: { pageHref?: string }) => {
+  if (!link.href) {
+    return <div className='py-3 text-muted-foreground'>{content}</div>
+  }
+
+  return (
+    <a
+      href={link.href}
+      target='_blank'
+      rel='noopener noreferrer'
+      className='block py-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors'
+    >
+      {content}
+    </a>
+  )
+}
+
+function Feedback({ feedback }: { feedback: PortfolioFeedback }) {
+  const { quote, author, role, rating, image } = feedback
+  return (
+    <figure className='mt-6 flex flex-col gap-3'>
+      {rating && (
+        <p className='flex items-center gap-2 text-xs sm:text-sm text-muted-foreground'>
+          <span className='flex gap-0.5' role='img' aria-label={`Rated ${rating} out of 5`}>
+            {Array.from({ length: 5 }, (_, i) => (
+              <Star
+                key={i}
+                aria-hidden
+                className={i < rating ? 'size-4 fill-current text-foreground' : 'size-4'}
+              />
+            ))}
+          </span>
+          {rating.toFixed(1)} on Riipen
+        </p>
+      )}
+      <blockquote className='border-l-2 border-foreground pl-4 text-sm sm:text-base italic leading-relaxed'>
+        &ldquo;{quote}&rdquo;
+      </blockquote>
+      <figcaption className='text-xs sm:text-sm text-muted-foreground'>
+        {author}, {role}
+        {image && (
+          <>
+            {' · '}
+            <a
+              href={image}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors'
+            >
+              View original
+            </a>
+          </>
+        )}
+      </figcaption>
+    </figure>
+  )
+}
+
+const WorkPortfolio = ({
+  pageHref,
+  showEvidence = false,
+}: {
+  pageHref?: string
+  // Show feedback quotes and artifact captions (the /portfolio page only).
+  showEvidence?: boolean
+}) => {
   return (
     <div>
       <div className='flex flex-wrap items-center justify-center gap-2 mb-6'>
@@ -38,56 +95,40 @@ const WorkPortfolio = ({ pageHref }: { pageHref?: string }) => {
         {pageHref && <PageLink href={pageHref} />}
       </div>
 
-      <div className='flex flex-col gap-4 w-full max-w-2xl mx-auto'>
-        <Card className='flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-5 hover:border-blue-300'>
-          <div className='flex items-center gap-3'>
-            <FileText className='size-8 shrink-0 text-muted-foreground' />
-            <div className='flex flex-col gap-1'>
-              <CardTitle>Resume</CardTitle>
-              <CardDescription>Software Developer resume (PDF)</CardDescription>
-            </div>
-          </div>
-          <div className='flex gap-2'>
-            <Button variant='outline' size='sm' asChild>
-              <a href={resumeHref} target='_blank' rel='noopener noreferrer'>
-                <FileText /> View
-              </a>
-            </Button>
-            <Button size='sm' asChild>
-              <a href={resumeHref} download>
-                <Download /> Download
-              </a>
-            </Button>
-          </div>
-        </Card>
-
-        <HoverFocusGroup asChild>
-          <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
-            {workSamples.map((sample) => (
-              <HoverFocusItem key={sample.title} asChild>
-                <Card className='p-5 hover:border-blue-300'>
-                  <div className='flex flex-col gap-1'>
-                    <CardTitle>{sample.title}</CardTitle>
-                    <p className='text-xs text-muted-foreground'>{sample.company}</p>
-                  </div>
-                  <CardDescription>{sample.description}</CardDescription>
-                  <div className='flex flex-wrap gap-3'>
-                    {sample.tags.map((tag) => (
-                      <Badge key={tag} variant='secondary' className='shadow-2xl'>
-                        {tag}
-                      </Badge>
+      <div className='flex flex-col gap-10 w-full max-w-2xl mx-auto'>
+        {portfolio.map((entry) => {
+          const exp = experiences.find((e) => e.company === entry.company)
+          return (
+            <section key={entry.company} className='flex gap-4 sm:gap-6'>
+              <Logo src={exp?.logo} name={entry.company} />
+              <div className='min-w-0 flex-1'>
+                <h3 className='text-lg sm:text-xl font-semibold leading-tight'>
+                  {entry.company}
+                </h3>
+                {exp && (
+                  <p className='mt-0.5 text-xs sm:text-sm text-muted-foreground'>
+                    {exp.role} · {exp.period}
+                  </p>
+                )}
+                {entry.links.length > 0 ? (
+                  <ul className='mt-3 divide-y divide-border border-t border-border'>
+                    {entry.links.map((link, i) => (
+                      <li key={`${link.title}-${i}`}>
+                        <LinkRow link={link} />
+                      </li>
                     ))}
-                  </div>
-                  {sample.href && (
-                    <a href={sample.href} className='text-sm hover:text-blue-300'>
-                      View sample
-                    </a>
-                  )}
-                </Card>
-              </HoverFocusItem>
-            ))}
-          </div>
-        </HoverFocusGroup>
+                  </ul>
+                ) : (
+                  <p className='mt-3 text-sm text-muted-foreground'>Work samples coming soon.</p>
+                )}
+                {showEvidence && entry.feedback && <Feedback feedback={entry.feedback} />}
+                {showEvidence && entry.artifact && (
+                  <ArtifactCaption {...entry.artifact} className='mt-4' />
+                )}
+              </div>
+            </section>
+          )
+        })}
       </div>
     </div>
   )

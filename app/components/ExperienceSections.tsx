@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { Emphasized, FilterPill, Logo } from './SectionParts'
+import ResumeCard from './ResumeCard'
 import {
   experiences,
   experienceCategories,
@@ -26,6 +27,8 @@ const ExperienceSections = () => {
   return (
     <div className='w-full max-w-5xl mx-auto'>
       <h2 className='text-3xl font-bold text-center mb-8'>Experience</h2>
+
+      <ResumeCard className='max-w-2xl mx-auto mb-8' />
 
       <div className='flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-6'>
         <div>

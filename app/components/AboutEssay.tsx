@@ -1,4 +1,6 @@
 import React from 'react'
+import ArtifactCaption from './ArtifactCaption'
+import { artifacts } from '../data/artifacts'
 
 const paragraphs = [
   "Growing up, I watched things I wanted stay out of reach, and it stung. Now, things feel more real. I’m a third-year computer science student at York University, currently completing a software development co-op at GoodLife Fitness, building production systems. I’m invested in backend and distributed systems. Outside of academics, I run an ecommerce business where I generated over $60k in revenue in 2025. Running a solo business has built my resilience, adaptability, and helped me develop a client first mindset, all which have made be a better developer.",
@@ -42,10 +44,9 @@ const AboutEssay = () => {
             alt="A boulder being pushed uphill"
             className='w-full rounded-xl border'
           />
-          <figcaption className='text-sm text-muted-foreground text-center'>
-            My artifact: progress only happens when you keep pushing.
-          </figcaption>
         </figure>
+
+        <ArtifactCaption {...artifacts.essay} className='mt-4' />
       </div>
     </article>
   )
