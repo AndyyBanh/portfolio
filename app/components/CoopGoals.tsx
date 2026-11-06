@@ -13,7 +13,14 @@ const formatDate = (iso: string, withYear = true) =>
     timeZone: 'UTC',
   })
 
-export const ProgressBar = ({ label, done, target, unit }: { label: string; done: number; target: number; unit: string }) => {
+export const ProgressBar = ({ label, done, target, unit }: { label: string; done: number; target?: number; unit: string }) => {
+  if (target === undefined) {
+    return (
+      <span className='text-xs tabular-nums text-muted-foreground'>
+        {done} {unit} so far
+      </span>
+    )
+  }
   const pct = Math.min(100, Math.round((done / target) * 100))
   return (
     <div className='flex items-center gap-3'>
@@ -73,6 +80,12 @@ const GoalCard = ({ competency }: { competency: Competency }) => (
   <HoverFocusItem asChild>
     <Card className='gap-5 p-5 hover:border-blue-300'>
       <CardTitle className='text-base'>{competency.name}</CardTitle>
+      {competency.reflection && (
+        <div className='flex flex-col gap-1.5'>
+          <p className='text-xs font-medium uppercase tracking-wide text-muted-foreground'>Reflection</p>
+          <p className='text-sm leading-relaxed text-muted-foreground'>{competency.reflection}</p>
+        </div>
+      )}
       {competency.goals.map((goal, i) => (
         <React.Fragment key={goal.title}>
           {i > 0 && <hr className='border-border' />}

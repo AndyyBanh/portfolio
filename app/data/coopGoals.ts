@@ -5,6 +5,8 @@
 //   2. Add a line to the top of `log`, e.g.
 //        { date: "2026-11-14", note: "Reviewed the auth refactor PR. Noted why middleware beat route guards." },
 //      Dates are YYYY-MM-DD. Entries are shown newest first by date, so order doesn't matter.
+//
+// Leave out `target` for open-ended goals: they show a running count ("3 escalated so far") instead of a bar.
 
 export type ProgressEntry = { date: string; note: string }
 
@@ -12,13 +14,13 @@ export type CoopGoal = {
   title: string
   summary: string
   due: string // YYYY-MM-DD
-  target: number
+  target?: number // omit for open-ended goals (running count, no bar)
   unit: string // plural noun, e.g. "PRs"
   done: number
   log: ProgressEntry[]
 }
 
-export type Competency = { name: string; goals: CoopGoal[] }
+export type Competency = { name: string; reflection?: string; goals: CoopGoal[] }
 
 export const coopTerm = {
   company: "GoodLife",
@@ -68,6 +70,21 @@ export const competencies: Competency[] = [
         target: 2,
         unit: "meetings",
         done: 0,
+        log: [],
+      },
+    ],
+  },
+  {
+    name: "Emotional Self-Awareness",
+    reflection:
+      "Early in my co-op I picked up a ticket on a legacy repository with deprecated dependencies and features that no longer worked. I spent a long time trying to piece it together on my own before I noticed my frustration and asked a teammate, who gave me the context I needed to find a solution. It showed me that I tend to try to figure everything out myself. I'm working on this competency so I notice sooner when I'm stuck and how it affects my work, and so I make full use of the experienced teammates around me.",
+    goals: [
+      {
+        title: "Escalate blockers sooner",
+        summary: "When I've made no progress on a blocker for an hour, name it, ask a teammate for context, and note what I learned.",
+        due: "2026-12-31",
+        unit: "escalated",
+        done: 1,
         log: [],
       },
     ],
