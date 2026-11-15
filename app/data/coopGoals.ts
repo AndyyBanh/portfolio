@@ -8,26 +8,14 @@
 //
 // Leave out `target` for open-ended goals: they show a running count ("3 escalated so far") instead of a bar.
 
-export type ProgressEntry = { date: string; note: string }
-
-export type CoopGoal = {
-  title: string
-  summary: string
-  due: string // YYYY-MM-DD
-  target?: number // omit for open-ended goals (running count, no bar)
-  unit: string // plural noun, e.g. "PRs"
-  done: number
-  log: ProgressEntry[]
-}
-
-export type Competency = { name: string; reflection?: string; goals: CoopGoal[] }
+import type { CompetencyGoals } from "@/types"
 
 export const coopTerm = {
   company: "GoodLife",
   period: "Fall 2026 – Summer 2027",
 }
 
-export const competencies: Competency[] = [
+export const competencies: CompetencyGoals[] = [
   {
     name: "Critical Thinking & Problem Solving",
     goals: [
@@ -116,7 +104,7 @@ export const competencies: Competency[] = [
 ]
 
 // Personal goals shown after the co-op cards. For LeetCode, `done` is the solved count.
-export const personalGoals: Competency[] = [
+export const personalGoals: CompetencyGoals[] = [
   {
     name: "Grow my LeetCode practice",
     goals: [

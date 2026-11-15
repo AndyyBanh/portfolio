@@ -3,15 +3,10 @@ import { ChevronRight } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardTitle } from '@/components/ui/card'
 import { HoverFocusItem } from '@/components/ui/hover-focus'
-import { competencies, coopTerm, personalGoals, type Competency, type CoopGoal } from '../data/coopGoals'
-
-const formatDate = (iso: string, withYear = true) =>
-  new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    ...(withYear && { year: 'numeric' }),
-    timeZone: 'UTC',
-  })
+import { formatDate } from '@/lib/date'
+import { sortByDateDesc } from '@/lib/sort'
+import type { CompetencyGoals, CoopGoal } from '@/types'
+import { competencies, coopTerm, personalGoals } from '../data/coopGoals'
 
 export const ProgressBar = ({ label, done, target, unit }: { label: string; done: number; target?: number; unit: string }) => {
   if (target === undefined) {
@@ -44,7 +39,7 @@ export const ProgressBar = ({ label, done, target, unit }: { label: string; done
 
 const GoalProgress = ({ goal }: { goal: CoopGoal }) => {
   const { title, summary, due, target, unit, done, log } = goal
-  const entries = [...log].sort((a, b) => b.date.localeCompare(a.date))
+  const entries = sortByDateDesc(log, (entry) => entry.date)
 
   return (
     <div className='flex flex-col gap-2'>
@@ -76,7 +71,7 @@ const GoalProgress = ({ goal }: { goal: CoopGoal }) => {
   )
 }
 
-const GoalCard = ({ competency }: { competency: Competency }) => (
+const GoalCard = ({ competency }: { competency: CompetencyGoals }) => (
   <HoverFocusItem asChild>
     <Card className='gap-5 p-5 hover:border-blue-300'>
       <CardTitle className='text-base'>{competency.name}</CardTitle>

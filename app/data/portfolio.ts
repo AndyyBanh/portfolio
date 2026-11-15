@@ -11,28 +11,8 @@
 //       - `rating`: out of 5, shown as stars. `image`: path in /public to a screenshot of the original.
 //   - `artifact` (optional, /portfolio only): a COOP-2100 artifact caption from ./artifacts.ts.
 
-import { artifacts, type ArtifactCaption } from "./artifacts"
-
-export type PortfolioLink = {
-  title: string
-  href?: string
-  note?: string
-}
-
-export type PortfolioFeedback = {
-  quote: string
-  author: string
-  role: string
-  rating?: number
-  image?: string
-}
-
-export type PortfolioEntry = {
-  company: string
-  links: PortfolioLink[]
-  feedback?: PortfolioFeedback
-  artifact?: ArtifactCaption
-}
+import type { PortfolioEntry } from "@/types"
+import { artifacts } from "./artifacts"
 
 export const portfolio: PortfolioEntry[] = [
   {

@@ -1,28 +1,16 @@
 "use client"
 
-import React, { useState } from 'react'
-import { Emphasized, FilterPill, Logo } from './SectionParts'
+import React from 'react'
+import { useCategoryFilter } from '@/hooks/useCategoryFilter'
+import { sortByDateDesc } from '@/lib/sort'
+import { CategoryFilter, HighlightList, Logo } from './SectionParts'
 import ResumeCard from './ResumeCard'
-import {
-  experiences,
-  experienceCategories,
-  type ExperienceCategory,
-} from '../data/experience'
+import { experiences, experienceCategories } from '../data/experience'
 
-const sorted = [...experiences].sort((a, b) => b.start.localeCompare(a.start))
+const sorted = sortByDateDesc(experiences, (item) => item.start)
 
 const ExperienceSections = () => {
-  const [selected, setSelected] = useState<ExperienceCategory[]>([])
-
-  const toggle = (id: ExperienceCategory) =>
-    setSelected((prev) =>
-      prev.includes(id) ? prev.filter((c) => c !== id) : [...prev, id]
-    )
-
-  const visible =
-    selected.length === 0
-      ? sorted
-      : sorted.filter((item) => item.categories.some((c) => selected.includes(c)))
+  const { selected, toggle, clear, visible } = useCategoryFilter(sorted)
 
   return (
     <div className='w-full max-w-5xl mx-auto'>
@@ -30,26 +18,13 @@ const ExperienceSections = () => {
 
       <ResumeCard className='max-w-2xl mx-auto mb-8' />
 
-      <div className='flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-6'>
-        <div>
-          <p className='text-sm sm:text-base font-medium'>Filter by discipline</p>
-          <p className='text-xs sm:text-sm text-muted-foreground'>Choose one or more</p>
-        </div>
-        <div className='flex flex-wrap gap-2'>
-          <FilterPill active={selected.length === 0} onClick={() => setSelected([])}>
-            All
-          </FilterPill>
-          {experienceCategories.map((cat) => (
-            <FilterPill
-              key={cat.id}
-              active={selected.includes(cat.id)}
-              onClick={() => toggle(cat.id)}
-            >
-              {cat.label}
-            </FilterPill>
-          ))}
-        </div>
-      </div>
+      <CategoryFilter
+        label='Filter by discipline'
+        categories={experienceCategories}
+        selected={selected}
+        onToggle={toggle}
+        onClear={clear}
+      />
 
       <ol className='divide-y divide-border'>
         {visible.map((item) => (
@@ -62,15 +37,7 @@ const ExperienceSections = () => {
                 {item.period}
                 {item.location && <> · {item.location}</>}
               </p>
-              {item.highlights.length > 0 && (
-                <ul className='mt-4 max-w-3xl list-disc pl-5 space-y-1.5 text-sm sm:text-base leading-relaxed'>
-                  {item.highlights.map((highlight, i) => (
-                    <li key={i}>
-                      <Emphasized text={highlight} />
-                    </li>
-                  ))}
-                </ul>
-              )}
+              <HighlightList items={item.highlights} />
             </div>
           </li>
         ))}

@@ -4,7 +4,8 @@ import ArtifactCaption from './ArtifactCaption'
 import PageLink from './PageLink'
 import { Logo } from './SectionParts'
 import { experiences } from '../data/experience'
-import { portfolio, type PortfolioFeedback, type PortfolioLink } from '../data/portfolio'
+import { portfolio } from '../data/portfolio'
+import type { PortfolioFeedback, PortfolioLink } from '@/types'
 
 function LinkRow({ link }: { link: PortfolioLink }) {
   const meta = [link.note, !link.href && 'Link coming soon']

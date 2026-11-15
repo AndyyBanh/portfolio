@@ -9,25 +9,13 @@
 //   - `start`: YYYY-MM. /projects sorts newest first by this; projects without it keep array order after dated ones.
 //   - `categories`: which filter buttons on /projects include this entry.
 
+import type { ProjectItem } from "@/types"
+
 export const projectCategories = [
   { id: "full-stack", label: "Full Stack" },
   { id: "ai-ml", label: "AI / ML" },
   { id: "backend", label: "Backend" },
 ] as const
-
-export type ProjectCategory = (typeof projectCategories)[number]["id"]
-
-export type ProjectItem = {
-  title: string
-  description: string // short summary for the home page cards (not shown on /projects)
-  skills: string[]
-  github?: string
-  demo?: string
-  categories: ProjectCategory[]
-  period?: string // display text, e.g. "Jan 2026 - Mar 2026"
-  start?: string // YYYY-MM, used for newest-first sorting
-  highlights: string[]
-}
 
 export const projects: ProjectItem[] = [
   {

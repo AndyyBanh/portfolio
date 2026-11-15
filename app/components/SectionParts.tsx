@@ -69,3 +69,51 @@ export function FilterPill({
     </button>
   )
 }
+
+// Bulleted list of highlights; *phrases* are emphasized. Renders nothing when empty.
+export function HighlightList({ items }: { items: string[] }) {
+  if (items.length === 0) return null
+  return (
+    <ul className='mt-4 max-w-3xl list-disc pl-5 space-y-1.5 text-sm sm:text-base leading-relaxed'>
+      {items.map((highlight, i) => (
+        <li key={i}>
+          <Emphasized text={highlight} />
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+// "Filter by …" header with an "All" pill plus one pill per category (multi-select).
+export function CategoryFilter<C extends string>({
+  label,
+  categories,
+  selected,
+  onToggle,
+  onClear,
+}: {
+  label: string
+  categories: readonly { id: C; label: string }[]
+  selected: readonly C[]
+  onToggle: (id: C) => void
+  onClear: () => void
+}) {
+  return (
+    <div className='flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-6'>
+      <div>
+        <p className='text-sm sm:text-base font-medium'>{label}</p>
+        <p className='text-xs sm:text-sm text-muted-foreground'>Choose one or more</p>
+      </div>
+      <div className='flex flex-wrap gap-2'>
+        <FilterPill active={selected.length === 0} onClick={onClear}>
+          All
+        </FilterPill>
+        {categories.map((cat) => (
+          <FilterPill key={cat.id} active={selected.includes(cat.id)} onClick={() => onToggle(cat.id)}>
+            {cat.label}
+          </FilterPill>
+        ))}
+      </div>
+    </div>
+  )
+}

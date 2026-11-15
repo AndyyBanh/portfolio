@@ -1,13 +1,6 @@
 // Roadmap milestones shared by the /goals page (GoalsRoadmap) and the homepage snippet (Goals).
 
-export type Status = 'current' | 'upcoming' | 'future'
-
-export type Milestone = {
-  when: string
-  status: Status
-  coop?: boolean // render the co-op SMART goals + personal goals (app/data/coopGoals.ts) above the goal cards
-  goals: { title: string; description: string; steps: string[] }[]
-}
+import type { Milestone } from "@/types"
 
 export const milestones: Milestone[] = [
   {

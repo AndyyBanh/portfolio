@@ -1,7 +1,7 @@
 import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
-import type { ArtifactCaption as ArtifactCaptionData } from '../data/artifacts'
+import type { ArtifactCaption as ArtifactCaptionData } from '@/types'
 
 const ArtifactCaption = ({
   source,

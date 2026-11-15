@@ -4,7 +4,8 @@ import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { HoverFocusGroup, HoverFocusItem } from '@/components/ui/hover-focus'
 import { cn } from '@/lib/utils'
 import CoopGoals from './CoopGoals'
-import { milestones, type Status } from '../data/goals'
+import { milestones } from '../data/goals'
+import type { Status } from '@/types'
 
 const dotClasses: Record<Status, string> = {
   current: 'bg-primary ring-4 ring-primary/20',

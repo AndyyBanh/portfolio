@@ -10,6 +10,8 @@
 //   - `caption`: the 50–150 word caption.
 //   - `competencies`: names must match `undergradCompetencies` exactly (a typo fails type-checking).
 
+import type { ArtifactCaption } from "@/types"
+
 export const undergradCompetencies = [
   "Critical Thinking and Problem Solving",
   "Collaboration Across Networks and Leading With Influence",
@@ -19,14 +21,6 @@ export const undergradCompetencies = [
   "Accessing and Analyzing Information",
   "Curiosity and Imagination",
 ] as const
-
-export type Competency = (typeof undergradCompetencies)[number]
-
-export type ArtifactCaption = {
-  source: string
-  caption: string
-  competencies: Competency[]
-}
 
 export const artifacts = {
   // Draft: confirm "It took several takes" matches how the video was actually made.
