@@ -1,13 +1,21 @@
 "use client"
 
-import { useEffect, useState } from 'react'
+import { cloneElement, useEffect, useMemo, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { ActivityCalendar, type Activity } from 'react-activity-calendar'
 import 'react-activity-calendar/tooltips.css'
 
-/* Same pair for both schemes: --muted already flips with the site's theme toggle,
-   so the calendar follows it without any theme-detection code. */
-const colors = ['var(--muted)', '#2ea043']
+/* Only the empty-day colour from the theme is actually shown: --muted flips with the site's
+   theme toggle, so empty blocks follow it without any theme-detection code. */
+const theme = ['var(--muted)', '#15803d']
+
+/* Christmas palette. Active days take these in turn (by date, not by activity level),
+   so the chart is an even green/red/gold mix. The tooltip still gives the exact count. */
+const festive = [
+  '#15803d', // evergreen
+  '#c8102e', // crimson
+  '#e0a100', // rich gold
+]
 
 const formatDate = (date: string) =>
   new Date(date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' })
@@ -20,14 +28,29 @@ const ContributionCalendar = ({ data }: { data: Activity[] }) => {
   useEffect(() => setMounted(true), [])
   const colorScheme = mounted && resolvedTheme === 'dark' ? 'dark' : 'light'
 
+  const fills = useMemo(() => {
+    const map = new Map<string, string>()
+    let i = 0
+    for (const day of data) {
+      if (day.count > 0) map.set(day.date, festive[i++ % festive.length])
+    }
+    return map
+  }, [data])
+
   return (
     <ActivityCalendar
       data={data}
       colorScheme={colorScheme}
-      theme={{ light: colors, dark: colors }}
+      theme={{ light: theme, dark: theme }}
+      renderBlock={(block, activity) => {
+        const fill = fills.get(activity.date)
+        return fill ? cloneElement(block, { fill }) : block
+      }}
       blockSize={12}
       blockMargin={4}
-      fontSize={14}
+      blockRadius={6}
+      showColorLegend={false}
+      fontSize={16}
       labels={{ totalCount: '{{count}} contributions in the last year' }}
       tooltips={{
         activity: {
