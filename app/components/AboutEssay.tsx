@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import ArtifactCaption from './ArtifactCaption'
 import { artifacts } from '../data/artifacts'
 
@@ -39,10 +40,13 @@ const AboutEssay = () => {
         <p>{last}</p>
 
         <figure className='flex flex-col gap-3 mt-2'>
-          <img
+          <Image
             src="/artifact_boulder.jpg"
             alt="A boulder being pushed uphill"
-            className='w-full rounded-xl border'
+            width={1000}
+            height={675}
+            sizes="(max-width: 768px) 100vw, 768px"
+            className='w-full h-auto rounded-xl border'
           />
         </figure>
 

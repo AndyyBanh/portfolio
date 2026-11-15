@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 
-const resumeHref = "/AndyBanh_SoftwareDeveloper_v5.pdf"
+const resumeHref = "/AndyBanh_SoftwareDeveloper_v6.pdf"
 
 const ResumeCard = ({ className }: { className?: string }) => (
   <Card
