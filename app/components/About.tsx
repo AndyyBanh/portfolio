@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import PageLink from './PageLink'
+import GithubChart from './GithubChart'
+import { Skeleton } from '@/components/ui/skeleton'
 
 const socials = [
   { icon: FaGithub, href: "https://github.com/AndyyBanh", label: "Github" },
@@ -45,13 +47,9 @@ const About = ({ pageHref }: { pageHref?: string }) => {
           ))}
         </div>
 
-        <div className='w-full overflow-x-auto'>
-          <img
-            src="https://ghchart.rshah.org/AndyyBanh"
-            alt="AndyyBanh's Github chart"
-            className='w-full min-w-[640px]'
-          />
-        </div>
+        <Suspense fallback={<Skeleton className='w-full h-[161px]' />}>
+          <GithubChart user="AndyyBanh" />
+        </Suspense>
     </div>
 
   )

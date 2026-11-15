@@ -1,4 +1,5 @@
 import React from 'react'
+import YouTubeFacade from './YouTubeFacade'
 import ArtifactCaption from './ArtifactCaption'
 import { artifacts } from '../data/artifacts'
 
@@ -13,14 +14,7 @@ const WhyMeVideo = () => {
       </div>
 
       <div className='aspect-video w-full overflow-hidden rounded-xl border bg-muted'>
-        <iframe
-          src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_ID}`}
-          title="Why me — Andy Banh"
-          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          loading="lazy"
-          className='w-full h-full'
-        />
+        <YouTubeFacade id={YOUTUBE_ID} title="Why me — Andy Banh" />
       </div>
 
       <ArtifactCaption {...artifacts.whyMe} />
