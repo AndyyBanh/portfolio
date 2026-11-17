@@ -9,38 +9,17 @@ import {
 } from '@/components/ui/tooltip'
 import { HoverFocusGroup, HoverFocusItem } from '@/components/ui/hover-focus'
 import { cn } from '@/lib/utils'
+import PageLink from './PageLink'
+import ResumeCard from './ResumeCard'
+import { experiences } from '../data/experience'
 
-const experiences = [
-  {
-    role: "Software Developer Co-op",
-    company: "GoodLife Fitness",
-    period: "Upcoming Fall 2026",
-    description: "adding soon! super excited!",
-  },
-  {
-    role: "Software Developer Intern",
-    company: "Noble Solutions via Riipen",
-    period: "Feb 2026 - April 2026",
-    description: "Contributed to small real estate platform, earning 5-star feedback on Riipen",
-  },
-  {
-    role: "B.S Computer Science",
-    company: "York University",
-    period: "Sep 2024 - Present",
-    description: "being studious",
-  },
-  {
-    role: "Sole Proprietor",
-    company: "Self-employed",
-    period: "April 2025 - Present",
-    description: "Founded an ecommerce business, managing full operations, selling over 500+ products",
-  },
-]
-
-const Experience = () => {
+const Experience = ({ pageHref }: { pageHref?: string }) => {
   return (
     <div>
-      <h2 className='text-2xl font-bold text-center mb-6'>Experience</h2>
+      <div className='flex flex-wrap items-center justify-center gap-2 mb-6'>
+        <h2 className='text-2xl font-bold'>Experience</h2>
+        {pageHref && <PageLink href={pageHref} />}
+      </div>
 
       <div className='relative w-full max-w-3xl mx-auto'>
         <div
@@ -90,6 +69,8 @@ const Experience = () => {
           </ol>
         </HoverFocusGroup>
       </div>
+
+      <ResumeCard className='max-w-2xl mx-auto mt-8' />
     </div>
   )
 }

@@ -16,6 +16,8 @@ import { SiApachekafka } from "react-icons/si";
 import { SiVercel } from "react-icons/si";
 import { SiClaude } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
+import { SiDotnet } from "react-icons/si";
+import { TbBrandAzure } from "react-icons/tb";
 
 
 const skills = [
@@ -26,6 +28,7 @@ const skills = [
   { icon: <FaHtml5 />, name: "HTML/CSS"},
   { icon: <RiTailwindCssFill />, name: "TailwindCSS"},
   { icon: <TbBrandCSharp />, name: "C#" },
+  { icon: <SiDotnet />, name: ".NET" },
   { icon: <BiLogoSpringBoot />, name: "SpringBoot" },
   { icon: <SiFastapi />, name: "FastAPI" },
   { icon: <SiRedis />, name: "Redis" },
@@ -34,6 +37,7 @@ const skills = [
   { icon: <BiLogoPostgresql />, name: "PostgresSQL" },
   { icon: <SiApachekafka />, name: "Kafka" },
   { icon: <SiVercel />, name: "Vercel" },
+  { icon: <TbBrandAzure />, name: "Azure" },
   { icon: <SiClaude />, name: "Claude Code" },
 ]
 
@@ -56,10 +60,8 @@ const SkillRow = ({
       data-direction={direction}
       style={{ "--marquee-duration": duration } as React.CSSProperties}
     >
-      {/* Two identical halves — that's what makes the -50% translate loop invisibly. */}
       {[0, 1].map((half) => (
         <div key={half} className='flex gap-4 pr-4' aria-hidden={half === 1}>
-          {/* listed twice per half so a 6-pill row still overflows wide viewports */}
           {[...skills, ...skills].map((skill, i) => (
             <Badge
               key={`${skill.name}-${i}`}

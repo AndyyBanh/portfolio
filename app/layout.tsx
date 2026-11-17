@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "./components/Theme-Provider";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import BackButton from "./components/BackButton";
 import { Reveal } from "@/components/ui/reveal";
 
 const inter = Inter({
@@ -28,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${inter.variable} ${geistMono.variable} antialiased min-h-dvh flex flex-col`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -36,7 +37,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          {children}
+          <BackButton />
+          <main className="flex-1">{children}</main>
           <Reveal>
             <Footer />
           </Reveal>

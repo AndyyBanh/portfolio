@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => (
   <footer className="mt-20 py-8 flex flex-col items-center gap-3">
@@ -16,13 +16,6 @@ const Footer = () => (
         className="transition hover:scale-120"
       >
         <FaLinkedin size={22} />
-      </a>
-      <a
-        href="https://www.instagram.com/"
-        aria-label="Instagram"
-        className="transition hover:scale-120"
-      >
-        <FaInstagram size={22} />
       </a>
       <a
         href="mailto:andybanhab@gmail.com"
