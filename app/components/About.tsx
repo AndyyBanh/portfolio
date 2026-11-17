@@ -1,18 +1,17 @@
 import React, { Suspense } from 'react'
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import { MdLocationOn } from "react-icons/md";
+import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import PageLink from './PageLink'
 import GithubChart from './GithubChart'
 import { Skeleton } from '@/components/ui/skeleton'
 
 const socials = [
-  { icon: FaGithub, href: "https://github.com/AndyyBanh", label: "Github" },
+  { icon: Github, href: "https://github.com/AndyyBanh", label: "Github" },
   {
-    icon: FaLinkedin,
+    icon: Linkedin,
     href: "https://www.linkedin.com/in/andy-banh-a643a0278/",
     label: "Linkedin",
   },
-  { icon: FaEnvelope, href: "mailto:andybanhab@gmail.com", label: "Email" },
+  { icon: Mail, href: "mailto:andybanhab@gmail.com", label: "Email" },
 ]
 
 const About = ({ pageHref }: { pageHref?: string }) => {
@@ -21,7 +20,7 @@ const About = ({ pageHref }: { pageHref?: string }) => {
         <div className='flex flex-wrap items-center gap-x-4 gap-y-2'>
           <h1 className='text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight'>hi i&apos;m andy</h1>
           <span className='flex items-center gap-1 text-sm text-muted-foreground'>
-            <MdLocationOn /> Toronto, Canada
+            <MapPin size="1em" /> Toronto, Canada
           </span>
           {pageHref && <PageLink href={pageHref} />}
         </div>

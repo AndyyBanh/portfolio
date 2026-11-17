@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => (
   <footer className="mt-20 py-8 flex flex-col items-center gap-3">
@@ -8,21 +8,21 @@ const Footer = () => (
         aria-label="Github"
         className="transition hover:scale-120"
       >
-        <FaGithub size={22} />
+        <Github size={22} />
       </a>
       <a
         href="https://www.linkedin.com/in/andy-banh-a643a0278/"
         aria-label="Linkedin"
         className="transition hover:scale-120"
       >
-        <FaLinkedin size={22} />
+        <Linkedin size={22} />
       </a>
       <a
         href="mailto:andybanhab@gmail.com"
         aria-label="Email"
         className="transition hover:scale-120"
       >
-        <FaEnvelope size={22} />
+        <Mail size={22} />
       </a>
     </div>
     <p className="text-sm text-muted-foreground">

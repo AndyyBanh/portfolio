@@ -1,9 +1,8 @@
 "use client"
 
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu } from "lucide-react";
+import { Github, Linkedin, Mail, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -25,13 +24,13 @@ const navLinks = [
 ];
 
 const socials = [
-  { icon: FaGithub, href: "https://github.com/AndyyBanh", label: "Github" },
+  { icon: Github, href: "https://github.com/AndyyBanh", label: "Github" },
   {
-    icon: FaLinkedin,
+    icon: Linkedin,
     href: "https://www.linkedin.com/in/andy-banh-a643a0278/",
     label: "Linkedin",
   },
-  { icon: FaEnvelope, href: "mailto:andybanhab@gmail.com", label: "Email" },
+  { icon: Mail, href: "mailto:andybanhab@gmail.com", label: "Email" },
 ];
 
 const Navbar = () => {

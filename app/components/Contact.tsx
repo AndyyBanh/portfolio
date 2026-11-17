@@ -1,19 +1,19 @@
 import React from 'react'
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { HoverFocusGroup, HoverFocusItem } from '@/components/ui/hover-focus'
 import PageLink from './PageLink'
 import { cn } from '@/lib/utils'
 
 const contacts = [
-  { icon: FaEnvelope, label: "Email", value: "andybanhab@gmail.com", href: "mailto:andybanhab@gmail.com" },
+  { icon: Mail, label: "Email", value: "andybanhab@gmail.com", href: "mailto:andybanhab@gmail.com" },
   {
-    icon: FaLinkedin,
+    icon: Linkedin,
     label: "LinkedIn",
     value: "in/andy-banh",
     href: "https://www.linkedin.com/in/andy-banh-a643a0278/",
   },
-  { icon: FaGithub, label: "GitHub", value: "AndyyBanh", href: "https://github.com/AndyyBanh" },
+  { icon: Github, label: "GitHub", value: "AndyyBanh", href: "https://github.com/AndyyBanh" },
 ]
 
 const Contact = ({ pageHref }: { pageHref?: string }) => {

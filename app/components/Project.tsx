@@ -1,7 +1,7 @@
 import { Badge } from '@/components/ui/badge'
 import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { HoverFocusGroup, HoverFocusItem } from '@/components/ui/hover-focus'
-import { FaGithub } from "react-icons/fa";
+import { Github } from "lucide-react";
 import PageLink from './PageLink'
 import { projects } from '../data/projects'
 
@@ -42,7 +42,7 @@ const Project = ({ pageHref }: { pageHref?: string }) => {
                       aria-label={`${project.title} Project`}
                       className='flex items-center gap-1.5 hover:text-blue-300'
                     >
-                      <FaGithub /> Github
+                      <Github size="1em" /> Github
                     </a>
                   )}
                   {project.demo && (

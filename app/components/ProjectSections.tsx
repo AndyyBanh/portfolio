@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { ExternalLink } from 'lucide-react'
-import { FaGithub } from 'react-icons/fa'
+import { Github } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { useCategoryFilter } from '@/hooks/useCategoryFilter'
 import { sortByDateDesc } from '@/lib/sort'
@@ -60,7 +60,7 @@ const ProjectSections = () => {
                       aria-label={`${item.title} on GitHub`}
                       className={linkClass}
                     >
-                      <FaGithub /> GitHub
+                      <Github size="1em" /> GitHub
                     </a>
                   )}
                   {item.demo && (

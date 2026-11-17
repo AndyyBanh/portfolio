@@ -1,44 +1,31 @@
 import React from 'react'
 import { Badge } from '@/components/ui/badge'
-import { AiOutlineJavaScript } from "react-icons/ai";
-import { FaReact } from "react-icons/fa";
-import { RiNextjsFill } from "react-icons/ri";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { SiTypescript } from "react-icons/si";
-import { SiFastapi } from "react-icons/si";
-import { SiRedis } from "react-icons/si";
-import { SiLangchain } from "react-icons/si";
-import { SiMongodb } from "react-icons/si";
-import { BiLogoPostgresql } from "react-icons/bi";
-import { BiLogoSpringBoot } from "react-icons/bi";
-import { FaHtml5 } from "react-icons/fa";
-import { SiApachekafka } from "react-icons/si";
-import { SiVercel } from "react-icons/si";
-import { SiClaude } from "react-icons/si";
-import { TbBrandCSharp } from "react-icons/tb";
-import { SiDotnet } from "react-icons/si";
-import { TbBrandAzure } from "react-icons/tb";
+import {
+  AzureIcon, ClaudeIcon, CSharpIcon, DotnetIcon, FastApiIcon, Html5Icon, JavaScriptIcon, KafkaIcon,
+  LangChainIcon, MongoDbIcon, NextJsIcon, PostgreSqlIcon, ReactIcon, RedisIcon, SpringBootIcon,
+  TailwindIcon, TypeScriptIcon, VercelIcon,
+} from "@/components/icons/skills";
 
 
 const skills = [
-  { icon: <AiOutlineJavaScript />, name: "JavaScript"},
-  { icon: <SiTypescript />, name: "TypeScript"},
-  { icon: <FaReact />, name: "ReactJS"},
-  { icon: <RiNextjsFill />, name: "NextJs"},
-  { icon: <FaHtml5 />, name: "HTML/CSS"},
-  { icon: <RiTailwindCssFill />, name: "TailwindCSS"},
-  { icon: <TbBrandCSharp />, name: "C#" },
-  { icon: <SiDotnet />, name: ".NET" },
-  { icon: <BiLogoSpringBoot />, name: "SpringBoot" },
-  { icon: <SiFastapi />, name: "FastAPI" },
-  { icon: <SiRedis />, name: "Redis" },
-  { icon: <SiLangchain />, name: "RAG/Langchain" },
-  { icon: <SiMongodb />, name: "MongoDB" },
-  { icon: <BiLogoPostgresql />, name: "PostgresSQL" },
-  { icon: <SiApachekafka />, name: "Kafka" },
-  { icon: <SiVercel />, name: "Vercel" },
-  { icon: <TbBrandAzure />, name: "Azure" },
-  { icon: <SiClaude />, name: "Claude Code" },
+  { icon: <JavaScriptIcon />, name: "JavaScript"},
+  { icon: <TypeScriptIcon />, name: "TypeScript"},
+  { icon: <ReactIcon />, name: "ReactJS"},
+  { icon: <NextJsIcon />, name: "NextJs"},
+  { icon: <Html5Icon />, name: "HTML/CSS"},
+  { icon: <TailwindIcon />, name: "TailwindCSS"},
+  { icon: <CSharpIcon />, name: "C#" },
+  { icon: <DotnetIcon />, name: ".NET" },
+  { icon: <SpringBootIcon />, name: "SpringBoot" },
+  { icon: <FastApiIcon />, name: "FastAPI" },
+  { icon: <RedisIcon />, name: "Redis" },
+  { icon: <LangChainIcon />, name: "RAG/Langchain" },
+  { icon: <MongoDbIcon />, name: "MongoDB" },
+  { icon: <PostgreSqlIcon />, name: "PostgresSQL" },
+  { icon: <KafkaIcon />, name: "Kafka" },
+  { icon: <VercelIcon />, name: "Vercel" },
+  { icon: <AzureIcon />, name: "Azure" },
+  { icon: <ClaudeIcon />, name: "Claude Code" },
 ]
 
 const mid = Math.ceil(skills.length / 2)

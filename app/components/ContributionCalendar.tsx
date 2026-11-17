@@ -3,22 +3,18 @@
 import { cloneElement, useEffect, useMemo, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { ActivityCalendar, type Activity } from 'react-activity-calendar'
-import 'react-activity-calendar/tooltips.css'
 
 /* Only the empty-day colour from the theme is actually shown: --muted flips with the site's
    theme toggle, so empty blocks follow it without any theme-detection code. */
 const theme = ['var(--muted)', '#15803d']
 
 /* Christmas palette. Active days take these in turn (by date, not by activity level),
-   so the chart is an even green/red/gold mix. The tooltip still gives the exact count. */
+   so the chart is an even green/red/gold mix. */
 const festive = [
   '#15803d', // evergreen
   '#c8102e', // crimson
   '#e0a100', // rich gold
 ]
-
-const formatDate = (date: string) =>
-  new Date(date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' })
 
 const ContributionCalendar = ({ data }: { data: Activity[] }) => {
   // The library tints block outlines by colour scheme. The server can't know the visitor's theme,
@@ -52,12 +48,8 @@ const ContributionCalendar = ({ data }: { data: Activity[] }) => {
       showColorLegend={false}
       fontSize={16}
       labels={{ totalCount: '{{count}} contributions in the last year' }}
-      tooltips={{
-        activity: {
-          text: ({ count, date }) =>
-            `${count === 0 ? 'No' : count} contribution${count === 1 ? '' : 's'} on ${formatDate(date)}`,
-        },
-      }}
+      /* No `tooltips`: the library lazy-loads one tooltip per day square, and resolving ~370
+         Suspense boundaries re-renders the calendar per square, freezing the page ~4 s on load. */
     />
   )
 }
