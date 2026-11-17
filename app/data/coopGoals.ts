@@ -1,4 +1,5 @@
-// Co-op SMART goals (COOP-2100) and personal goals shown in the "Now" section of /goals.
+// Co-op SMART goals (COOP-2100), shown in the "Now" section of /goals, and personal goals,
+// shown in the "Miscellaneous" section (milestones with `personal: true` in app/data/goals.ts).
 //
 // To log progress on a goal:
 //   1. Bump `done` (the bar fills toward `target`; it shows "Done" when done >= target).
@@ -103,7 +104,7 @@ export const competencies: CompetencyGoals[] = [
   // },
 ]
 
-// Personal goals shown after the co-op cards. For LeetCode, `done` is the solved count.
+// Personal goals shown under "Miscellaneous" (not part of the co-op). For LeetCode, `done` is the solved count.
 export const personalGoals: CompetencyGoals[] = [
   {
     name: "Grow my LeetCode practice",

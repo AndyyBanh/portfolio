@@ -3,7 +3,8 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { HoverFocusGroup, HoverFocusItem } from '@/components/ui/hover-focus'
 import { cn } from '@/lib/utils'
-import CoopGoals from './CoopGoals'
+import CoopGoals, { GoalCard } from './CoopGoals'
+import { personalGoals } from '../data/coopGoals'
 import { milestones } from '../data/goals'
 import type { Status } from '@/types'
 
@@ -35,7 +36,7 @@ const GoalsRoadmap = () => {
 
         <HoverFocusGroup asChild>
           <ol className='space-y-10'>
-            {milestones.map(({ when, status, coop, goals }) => (
+            {milestones.map(({ when, status, coop, personal, goals }) => (
               <li
                 key={when}
                 className='relative pl-10 md:pl-0 md:grid md:grid-cols-[7.5rem_1fr] md:gap-x-10'
@@ -55,6 +56,10 @@ const GoalsRoadmap = () => {
 
                 <div className='flex flex-col gap-4'>
                   {coop && <CoopGoals />}
+                  {personal &&
+                    personalGoals.map((competency) => (
+                      <GoalCard key={competency.name} competency={competency} />
+                    ))}
                   {goals.map((goal) => (
                     <HoverFocusItem key={goal.title} asChild>
                       <Card className='gap-2 p-5 hover:border-blue-300'>

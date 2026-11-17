@@ -6,7 +6,7 @@ import { HoverFocusItem } from '@/components/ui/hover-focus'
 import { formatDate } from '@/lib/date'
 import { sortByDateDesc } from '@/lib/sort'
 import type { CompetencyGoals, CoopGoal } from '@/types'
-import { competencies, coopTerm, personalGoals } from '../data/coopGoals'
+import { competencies, coopTerm } from '../data/coopGoals'
 
 export const ProgressBar = ({ label, done, target, unit }: { label: string; done: number; target?: number; unit: string }) => {
   if (target === undefined) {
@@ -71,7 +71,7 @@ const GoalProgress = ({ goal }: { goal: CoopGoal }) => {
   )
 }
 
-const GoalCard = ({ competency }: { competency: CompetencyGoals }) => (
+export const GoalCard = ({ competency }: { competency: CompetencyGoals }) => (
   <HoverFocusItem asChild>
     <Card className='gap-5 p-5 hover:border-blue-300'>
       <CardTitle className='text-base'>{competency.name}</CardTitle>
@@ -97,9 +97,6 @@ const CoopGoals = () => (
       <span className='font-medium text-foreground'>{coopTerm.company} co-op</span> · {coopTerm.period} · SMART goals
     </p>
     {competencies.map((competency) => (
-      <GoalCard key={competency.name} competency={competency} />
-    ))}
-    {personalGoals.map((competency) => (
       <GoalCard key={competency.name} competency={competency} />
     ))}
   </>

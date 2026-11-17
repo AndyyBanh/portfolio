@@ -23,6 +23,7 @@ export const milestones: Milestone[] = [
   {
     when: "Miscellaneous",
     status: "future",
+    personal: true,
     goals: [
       {
         title: "Go deeper on system design",

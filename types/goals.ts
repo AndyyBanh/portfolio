@@ -5,7 +5,8 @@ export type Status = 'current' | 'upcoming' | 'future'
 export type Milestone = {
   when: string
   status: Status
-  coop?: boolean // render the co-op SMART goals + personal goals (app/data/coopGoals.ts) above the goal cards
+  coop?: boolean // render the co-op SMART goals (app/data/coopGoals.ts) above the goal cards
+  personal?: boolean // render the personal goals (personalGoals in app/data/coopGoals.ts) above the goal cards
   goals: { title: string; description: string; steps: string[] }[]
 }
 

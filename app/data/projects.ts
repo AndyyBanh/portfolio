@@ -3,7 +3,8 @@
 // To fill in:
 //   - `highlights`: one string per bullet. Wrap key phrases/metrics in *asterisks* to emphasize them,
 //     e.g. "Streamed frames over WebSockets at *30 fps*". Leave the array empty to hide the list.
-//   - `skills`: shown as tags on both the home cards and /projects.
+//   - `skills`: shown as tags on both the home cards and /projects. Keep them high-level (frameworks, platforms,
+//     major infra like Kafka/Redis/PostgreSQL/Docker), ~4-5 max. No languages, test libs, or sub-libraries; the repo covers those.
 //   - `github` / `demo`: links shown under the tags. Remove a field to hide its link.
 //   - `period`: display text, e.g. "Jan 2026 - Mar 2026". Remove the field to hide it.
 //   - `start`: YYYY-MM. /projects sorts newest first by this; projects without it keep array order after dated ones.
@@ -22,7 +23,7 @@ export const projects: ProjectItem[] = [
     title: "Financial API Gateway",
     description:
       "API gateway that routes, authenticates, and rate-limits requests to downstream financial services.",
-    skills: ["Spring Boot", "Spring Cloud Gateway", "Kafka", "Redis", "OpenFeign", "Mockito", "Docker", "PostgreSQL"],
+    skills: ["Spring Boot", "Kafka", "Redis", "PostgreSQL", "Docker"],
     github: "https://github.com/AndyyBanh/financial-api-gateway",
     categories: ["backend"],
     highlights: [
@@ -36,7 +37,7 @@ export const projects: ProjectItem[] = [
     title: "Facility Management System",
     description:
       "Full Stack Web Application that allows clients to make requets for in demand tolietries. Allowing businesses to manage and track supplies being used.",
-    skills: ["React.js", "Spring Boot", "Mockito", "Redis", "Docker", "PostgreSQL"],
+    skills: ["React.js", "Spring Boot", "PostgreSQL", "Redis", "Docker"],
     github: "https://github.com/AndyyBanh/bathroombuddy",
     categories: ["full-stack"],
     highlights: [
@@ -49,7 +50,7 @@ export const projects: ProjectItem[] = [
   {
     title: "Discrete Math Chatbot",
     description: "Educational web app that allows user interaction through chatbot and quizzes.",
-    skills: ["Next.js", "TypeScript", "Python", "LangChain", "Chroma", "FastAPI", "OpenAI API"],
+    skills: ["Next.js", "FastAPI", "LangChain", "OpenAI API"],
     github: "https://github.com/AndyyBanh/discretemath-chatbot",
     demo: "https://youtu.be/Q2xd9Ib49Oo",
     categories: ["ai-ml", "full-stack"],
@@ -62,7 +63,7 @@ export const projects: ProjectItem[] = [
     title: "Form Coach",
     description:
       "Full Stack computer vision platform that allows users to correct their workout forms in real time using WebSockets to stream frames and computer vision to perform movement analysis.",
-    skills: ["Next.js", "Spring Boot", "Python", "OpenCV", "MediaPipe", "FastAPI"],
+    skills: ["Next.js", "Spring Boot", "FastAPI", "OpenCV"],
     github: "https://github.com/AndyyBanh/formcoach",
     categories: ["full-stack", "ai-ml"],
     highlights: [

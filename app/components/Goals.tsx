@@ -8,7 +8,8 @@ import { milestones } from '../data/goals'
 
 // Homepage snippet of /goals. Reads the same data as the goals page, so update
 // app/data/coopGoals.ts (progress) and app/data/goals.ts (milestones) only.
-const trackedGoals = [...competencies, ...personalGoals].flatMap((c) => c.goals)
+const trackedGoals = competencies.flatMap((c) => c.goals)
+const personalTrackedGoals = personalGoals.flatMap((c) => c.goals)
 const otherMilestones = milestones.filter((m) => !m.coop)
 
 const eyebrow = 'text-xs font-medium uppercase tracking-wide text-muted-foreground'
@@ -37,10 +38,17 @@ const Goals = ({ pageHref }: { pageHref?: string }) => {
             </Card>
           </HoverFocusItem>
 
-          {otherMilestones.map(({ when, goals }) => (
+          {otherMilestones.map(({ when, personal, goals }) => (
             <HoverFocusItem key={when} asChild>
               <Card className='gap-4 p-5 hover:border-blue-300'>
                 <p className={eyebrow}>{when}</p>
+                {personal &&
+                  personalTrackedGoals.map((goal) => (
+                    <div key={goal.title} className='flex flex-col gap-1.5'>
+                      <CardTitle className='text-base'>{goal.title}</CardTitle>
+                      <ProgressBar label={goal.title} done={goal.done} target={goal.target} unit={goal.unit} />
+                    </div>
+                  ))}
                 {goals.map((goal) => (
                   <div key={goal.title} className='flex flex-col gap-1'>
                     <CardTitle className='text-base'>{goal.title}</CardTitle>
