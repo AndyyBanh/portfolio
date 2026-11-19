@@ -33,6 +33,10 @@ const socials = [
   { icon: Mail, href: "mailto:andybanhab@gmail.com", label: "Email" },
 ];
 
+// Active for the page itself and anything under it (e.g. /projects/form-coach).
+const isActive = (pathname: string, href: string) =>
+  pathname === href || pathname.startsWith(`${href}/`);
+
 const Navbar = () => {
   const pathname = usePathname();
 
@@ -53,10 +57,10 @@ const Navbar = () => {
             <Link
               key={href}
               href={href}
-              aria-current={pathname === href ? "page" : undefined}
+              aria-current={isActive(pathname, href) ? "page" : undefined}
               className={cn(
                 "text-sm transition-colors hover:text-foreground",
-                pathname === href ? "text-syn-keyword font-medium" : "text-muted-foreground"
+                isActive(pathname, href) ? "text-syn-keyword font-medium" : "text-muted-foreground"
               )}
             >
               {label}
@@ -89,8 +93,8 @@ const Navbar = () => {
                 <DropdownMenuItem key={href} asChild>
                   <Link
                     href={href}
-                    aria-current={pathname === href ? "page" : undefined}
-                    className={cn(pathname === href && "font-medium text-foreground")}
+                    aria-current={isActive(pathname, href) ? "page" : undefined}
+                    className={cn(isActive(pathname, href) && "font-medium text-foreground")}
                   >
                     {label}
                   </Link>

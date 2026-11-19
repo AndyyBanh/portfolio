@@ -1,12 +1,9 @@
-import { Badge } from '@/components/ui/badge'
-import { Card, CardDescription, CardTitle } from '@/components/ui/card'
-import { HoverFocusGroup, HoverFocusItem } from '@/components/ui/hover-focus'
-import { Github } from "lucide-react";
+import React from 'react'
+import { HoverFocusGroup } from '@/components/ui/hover-focus'
 import PageLink from './PageLink'
+import ProjectCard from './ProjectCard'
 import { CodeHeading } from './SectionParts'
 import { projects } from '../data/projects'
-
-import React from 'react'
 
 const Project = ({ pageHref }: { pageHref?: string }) => {
   return (
@@ -19,45 +16,7 @@ const Project = ({ pageHref }: { pageHref?: string }) => {
         <HoverFocusGroup asChild>
         <div className='grid grid-cols-1 sm:grid-cols-2 justify-center gap-4 w-full max-w-3xl mx-auto'>
           {projects.map((project) => (
-            <HoverFocusItem key={project.title} asChild><Card className='p-5 hover:border-syn-function/60 hover:bg-line'>
-              <CardTitle>
-                {project.title}
-              </CardTitle>
-              <CardDescription>
-                {project.description}
-              </CardDescription>
-
-              <div className='flex flex-wrap gap-3'>
-                {project.skills.map((skill) => (
-                  <Badge key={skill} variant='code'>
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-
-              {(project.github || project.demo) && (
-                <div className='flex justify-between'>
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      aria-label={`${project.title} Project`}
-                      className='flex items-center gap-1.5 hover:text-syn-function transition-colors'
-                    >
-                      <Github size="1em" /> Github
-                    </a>
-                  )}
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      aria-label={`${project.title} Demo`}
-                      className='items-center hover:text-syn-function transition-colors'
-                    >
-                      Demo
-                    </a>
-                  )}
-                </div>
-              )}
-            </Card></HoverFocusItem>
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
         </HoverFocusGroup>
