@@ -41,7 +41,7 @@ const Navbar = () => {
       <nav className="flex h-16 w-full items-center justify-between px-4 sm:px-10">
         <Link
           href="/"
-          className="font-mono text-lg font-bold tracking-tight"
+          className="font-mono text-lg font-bold tracking-tight text-syn-keyword"
           aria-label="Home"
         >
           ab
@@ -56,7 +56,7 @@ const Navbar = () => {
               aria-current={pathname === href ? "page" : undefined}
               className={cn(
                 "text-sm transition-colors hover:text-foreground",
-                pathname === href ? "text-foreground font-medium" : "text-muted-foreground"
+                pathname === href ? "text-syn-keyword font-medium" : "text-muted-foreground"
               )}
             >
               {label}

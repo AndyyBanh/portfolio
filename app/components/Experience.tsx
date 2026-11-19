@@ -10,6 +10,7 @@ import {
 import { HoverFocusGroup, HoverFocusItem } from '@/components/ui/hover-focus'
 import { cn } from '@/lib/utils'
 import PageLink from './PageLink'
+import { CodeHeading } from './SectionParts'
 import ResumeCard from './ResumeCard'
 import { experiences } from '../data/experience'
 
@@ -17,7 +18,7 @@ const Experience = ({ pageHref }: { pageHref?: string }) => {
   return (
     <div>
       <div className='flex flex-wrap items-center justify-center gap-2 mb-6'>
-        <h2 className='text-2xl font-bold'>Experience</h2>
+        <CodeHeading title='Experience' />
         {pageHref && <PageLink href={pageHref} />}
       </div>
 
@@ -51,11 +52,11 @@ const Experience = ({ pageHref }: { pageHref?: string }) => {
                     <HoverFocusItem asChild>
                       <Card
                         tabIndex={0}
-                        className='gap-1 p-4 cursor-default hover:border-blue-300'
+                        className='gap-1 p-4 cursor-default hover:border-syn-function/60 hover:bg-line'
                       >
                         <CardTitle className='text-base'>{item.role}</CardTitle>
                         <CardDescription className='text-sm'>{item.company}</CardDescription>
-                        <p className='text-xs text-muted-foreground'>{item.period}</p>
+                        <p className='text-xs text-syn-constant'>{item.period}</p>
                       </Card>
                     </HoverFocusItem>
                   </TooltipTrigger>

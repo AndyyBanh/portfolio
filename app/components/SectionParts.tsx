@@ -9,7 +9,7 @@ export function Emphasized({ text }: { text: string }) {
     <>
       {text.split(/(\*[^*]+\*)/g).map((part, i) =>
         part.startsWith('*') && part.endsWith('*') && part.length > 2 ? (
-          <em key={i} className='text-blue-600 dark:text-blue-400'>
+          <em key={i} className='text-syn-string'>
             {part.slice(1, -1)}
           </em>
         ) : (
@@ -17,6 +17,56 @@ export function Emphasized({ text }: { text: string }) {
         )
       )}
     </>
+  )
+}
+
+// "Tech Stack" -> "techStack"
+function toCamelCase(title: string) {
+  const words = title.replace(/[^A-Za-z0-9 ]/g, '').split(/\s+/).filter(Boolean)
+  return words
+    .map((w, i) => (i === 0 ? w.toLowerCase() : w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()))
+    .join('')
+}
+
+// Section heading styled as code: `fn techStack()`. Screen readers get the plain title.
+export function CodeHeading({
+  title,
+  as: Tag = 'h2',
+  keyword = 'fn',
+  className,
+}: {
+  title: string
+  as?: 'h1' | 'h2' | 'h3'
+  keyword?: string
+  className?: string
+}) {
+  return (
+    <Tag className={cn('font-mono text-2xl font-bold tracking-tight', className)}>
+      <span aria-hidden>
+        <span className='text-syn-keyword'>{keyword}</span>{' '}
+        <span className='text-foreground'>{toCamelCase(title)}</span>
+        <span className='font-normal text-muted-foreground'>()</span>
+      </span>
+      <span className='sr-only'>{title}</span>
+    </Tag>
+  )
+}
+
+// A `// comment` line. `as` keeps semantics when the comment is really a heading or paragraph.
+export function CodeComment({
+  as: Tag = 'p',
+  className,
+  children,
+}: {
+  as?: 'p' | 'h2' | 'span'
+  className?: string
+  children: React.ReactNode
+}) {
+  return (
+    <Tag className={cn('font-mono italic text-syn-comment', className)}>
+      <span aria-hidden className='not-italic select-none'>{'// '}</span>
+      {children}
+    </Tag>
   )
 }
 

@@ -22,7 +22,7 @@ const ArtifactCaption = ({
       <ul className='flex flex-wrap gap-2'>
         {competencies.map((name) => (
           <li key={name}>
-            <Badge variant='secondary' className='whitespace-normal text-left'>
+            <Badge variant='code' className='whitespace-normal text-left'>
               {name}
             </Badge>
           </li>

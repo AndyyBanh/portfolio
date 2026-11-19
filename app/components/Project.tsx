@@ -3,6 +3,7 @@ import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { HoverFocusGroup, HoverFocusItem } from '@/components/ui/hover-focus'
 import { Github } from "lucide-react";
 import PageLink from './PageLink'
+import { CodeHeading } from './SectionParts'
 import { projects } from '../data/projects'
 
 import React from 'react'
@@ -10,15 +11,15 @@ import React from 'react'
 const Project = ({ pageHref }: { pageHref?: string }) => {
   return (
     <div>
-        <div className='flex flex-wrap items-center justify-center gap-2 mb-5'>
-          <h2 className='text-2xl font-bold'>Projects</h2>
+        <div className='flex flex-wrap items-center justify-center gap-2 mb-6'>
+          <CodeHeading title='Projects' />
           {pageHref && <PageLink href={pageHref} />}
         </div>
 
         <HoverFocusGroup asChild>
-        <div className='grid grid-cols-1 sm:grid-cols-2 justify-center gap-4 w-full max-w-2xl mx-auto'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 justify-center gap-4 w-full max-w-3xl mx-auto'>
           {projects.map((project) => (
-            <HoverFocusItem key={project.title} asChild><Card className='p-5 hover:border-blue-300'>
+            <HoverFocusItem key={project.title} asChild><Card className='p-5 hover:border-syn-function/60 hover:bg-line'>
               <CardTitle>
                 {project.title}
               </CardTitle>
@@ -28,7 +29,7 @@ const Project = ({ pageHref }: { pageHref?: string }) => {
 
               <div className='flex flex-wrap gap-3'>
                 {project.skills.map((skill) => (
-                  <Badge key={skill} variant='secondary' className='shadow-2xl'>
+                  <Badge key={skill} variant='code'>
                     {skill}
                   </Badge>
                 ))}
@@ -40,7 +41,7 @@ const Project = ({ pageHref }: { pageHref?: string }) => {
                     <a
                       href={project.github}
                       aria-label={`${project.title} Project`}
-                      className='flex items-center gap-1.5 hover:text-blue-300'
+                      className='flex items-center gap-1.5 hover:text-syn-function transition-colors'
                     >
                       <Github size="1em" /> Github
                     </a>
@@ -49,7 +50,7 @@ const Project = ({ pageHref }: { pageHref?: string }) => {
                     <a
                       href={project.demo}
                       aria-label={`${project.title} Demo`}
-                      className='items-center hover:text-blue-300'
+                      className='items-center hover:text-syn-function transition-colors'
                     >
                       Demo
                     </a>

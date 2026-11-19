@@ -4,6 +4,7 @@ import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { HoverFocusGroup, HoverFocusItem } from '@/components/ui/hover-focus'
 import { cn } from '@/lib/utils'
 import CoopGoals, { GoalCard } from './CoopGoals'
+import { CodeComment } from './SectionParts'
 import { personalGoals } from '../data/coopGoals'
 import { milestones } from '../data/goals'
 import type { Status } from '@/types'
@@ -18,9 +19,9 @@ const GoalsRoadmap = () => {
   return (
     <div className='w-full max-w-3xl mx-auto'>
       <header className='flex flex-col gap-3 border-b pb-6 mb-10'>
-        <p className='text-xs font-medium uppercase tracking-wide text-muted-foreground'>
+        <CodeComment className='text-xs font-medium uppercase tracking-wide'>
           Goals · Roadmap
-        </p>
+        </CodeComment>
         <h1 className='text-3xl sm:text-4xl font-bold tracking-tight'>Where I&apos;m headed</h1>
         <p className='text-base sm:text-lg leading-relaxed text-muted-foreground'>
           My road to becoming a software engineer and the best version of myself. These are the goals I&apos;m chasing now and next, and I update my progress as I go.
@@ -50,7 +51,7 @@ const GoalsRoadmap = () => {
                 />
 
                 <div className='flex items-center gap-2 mb-3 md:mb-0 md:pt-5 md:flex-col md:items-end md:text-right'>
-                  <p className='text-xs font-medium uppercase tracking-wide text-muted-foreground'>{when}</p>
+                  <p className='text-xs font-medium uppercase tracking-wide text-syn-constant'>{when}</p>
                   {status === 'current' && <Badge variant='secondary'>In progress</Badge>}
                 </div>
 
@@ -62,7 +63,7 @@ const GoalsRoadmap = () => {
                     ))}
                   {goals.map((goal) => (
                     <HoverFocusItem key={goal.title} asChild>
-                      <Card className='gap-2 p-5 hover:border-blue-300'>
+                      <Card className='gap-2 p-5 hover:border-syn-function/60 hover:bg-line'>
                         <CardTitle className='text-base'>{goal.title}</CardTitle>
                         <CardDescription>{goal.description}</CardDescription>
                         <ul className='mt-1 list-disc pl-4 text-sm text-muted-foreground space-y-1'>

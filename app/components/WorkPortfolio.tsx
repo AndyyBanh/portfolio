@@ -2,7 +2,7 @@ import React from 'react'
 import { ArrowUpRight, Star } from 'lucide-react'
 import ArtifactCaption from './ArtifactCaption'
 import PageLink from './PageLink'
-import { Logo } from './SectionParts'
+import { CodeHeading, Logo } from './SectionParts'
 import { experiences } from '../data/experience'
 import { portfolio } from '../data/portfolio'
 import type { PortfolioFeedback, PortfolioLink } from '@/types'
@@ -33,7 +33,7 @@ function LinkRow({ link }: { link: PortfolioLink }) {
       href={link.href}
       target='_blank'
       rel='noopener noreferrer'
-      className='block py-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors'
+      className='block py-3 hover:bg-line hover:text-syn-function transition-colors'
     >
       {content}
     </a>
@@ -58,7 +58,7 @@ function Feedback({ feedback }: { feedback: PortfolioFeedback }) {
           {rating.toFixed(1)} on Riipen
         </p>
       )}
-      <blockquote className='border-l-2 border-foreground pl-4 text-sm sm:text-base italic leading-relaxed'>
+      <blockquote className='border-l-2 border-syn-string pl-4 text-sm sm:text-base italic text-syn-string leading-relaxed'>
         &ldquo;{quote}&rdquo;
       </blockquote>
       <figcaption className='text-xs sm:text-sm text-muted-foreground'>
@@ -70,7 +70,7 @@ function Feedback({ feedback }: { feedback: PortfolioFeedback }) {
               href={image}
               target='_blank'
               rel='noopener noreferrer'
-              className='underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors'
+              className='underline underline-offset-2 hover:text-syn-function transition-colors'
             >
               View original
             </a>
@@ -92,23 +92,23 @@ const WorkPortfolio = ({
   return (
     <div>
       <div className='flex flex-wrap items-center justify-center gap-2 mb-6'>
-        <h2 className='text-2xl font-bold'>Work Portfolio</h2>
+        <CodeHeading title='Work Portfolio' />
         {pageHref && <PageLink href={pageHref} />}
       </div>
 
-      <div className='flex flex-col gap-10 w-full max-w-2xl mx-auto'>
+      <div className='flex flex-col gap-10 w-full max-w-3xl mx-auto'>
         {portfolio.map((entry) => {
           const exp = experiences.find((e) => e.company === entry.company)
           return (
             <section key={entry.company} className='flex gap-4 sm:gap-6'>
               <Logo src={exp?.logo} name={entry.company} />
               <div className='min-w-0 flex-1'>
-                <h3 className='text-lg sm:text-xl font-semibold leading-tight'>
+                <h3 className='text-lg sm:text-xl font-semibold leading-tight text-syn-function'>
                   {entry.company}
                 </h3>
                 {exp && (
                   <p className='mt-0.5 text-xs sm:text-sm text-muted-foreground'>
-                    {exp.role} · {exp.period}
+                    {exp.role} · <span className='text-syn-constant'>{exp.period}</span>
                   </p>
                 )}
                 {entry.links.length > 0 ? (

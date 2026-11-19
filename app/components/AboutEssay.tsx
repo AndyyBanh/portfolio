@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import ArtifactCaption from './ArtifactCaption'
+import { CodeComment } from './SectionParts'
 import { artifacts } from '../data/artifacts'
 
 const paragraphs = [
@@ -19,9 +20,9 @@ const AboutEssay = () => {
   return (
     <article className='w-full max-w-2xl mx-auto'>
       <header className='flex flex-col gap-3 border-b pb-6 mb-8'>
-        <p className='text-xs font-medium uppercase tracking-wide text-muted-foreground'>
+        <CodeComment className='text-xs font-medium uppercase tracking-wide'>
           About me · Reflective essay
-        </p>
+        </CodeComment>
         <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>Out of reach</h2>
         <p className='text-sm text-muted-foreground'>Andy Banh · ~4 min read</p>
       </header>
@@ -33,7 +34,7 @@ const AboutEssay = () => {
           <p key={paragraph.slice(0, 32)}>{paragraph}</p>
         ))}
 
-        <blockquote className='border-l-2 border-foreground pl-5 my-2 text-lg sm:text-xl font-medium italic leading-snug'>
+        <blockquote className='border-l-2 border-syn-string pl-5 my-2 text-lg sm:text-xl font-medium italic leading-snug text-syn-string'>
           Like a boulder, progress only happens when you keep pushing.
         </blockquote>
 

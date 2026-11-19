@@ -3,6 +3,7 @@ import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import PageLink from './PageLink'
 import GithubChart from './GithubChart'
 import { Skeleton } from '@/components/ui/skeleton'
+import { CodeComment } from './SectionParts'
 
 const socials = [
   { icon: Github, href: "https://github.com/AndyyBanh", label: "Github" },
@@ -18,19 +19,22 @@ const About = ({ pageHref }: { pageHref?: string }) => {
   return (
     <div className='w-full flex flex-col items-start gap-6 text-left'>
         <div className='flex flex-wrap items-center gap-x-4 gap-y-2'>
-          <h1 className='text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight'>hi i&apos;m andy</h1>
-          <span className='flex items-center gap-1 text-sm text-muted-foreground'>
+          <h1 className='text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight'>
+            hi i&apos;m <span className='text-syn-keyword'>andy</span>
+            <span aria-hidden className='caret ml-1 font-normal text-syn-keyword'>▍</span>
+          </h1>
+          <span className='flex items-center gap-1 text-sm text-syn-string'>
             <MapPin size="1em" /> Toronto, Canada
           </span>
           {pageHref && <PageLink href={pageHref} />}
         </div>
 
-        <h2 className='text-xl sm:text-2xl font-medium text-muted-foreground'>
+        <CodeComment as='h2' className='text-lg sm:text-2xl font-medium'>
           typical cs student who spends countless hours on leetcode and building
-        </h2>
+        </CodeComment>
 
         <p className='text-base sm:text-lg max-w-2xl'>
-          Current Software Developer Co-op at GoodLife Fitness, studying @ YorkU
+          Current Software Developer Co-op at <span className='text-syn-function'>GoodLife Fitness</span>, studying @ <span className='text-syn-function'>YorkU</span>
         </p>
 
         <div className='flex items-center gap-6'>

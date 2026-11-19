@@ -2,6 +2,7 @@ import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import Image from 'next/image';
+import { CodeHeading } from './SectionParts'
 
 const courses = [
   "Advanced OOP",
@@ -13,10 +14,10 @@ const courses = [
 const Education = () => {
   return (
     <div>
-        <h2 className='text-2xl font-bold text-center mb-2'>Education</h2>
+        <CodeHeading title='Education' className='text-center mb-6' />
         <div className='flex justify-center'>
             <div className='w-full max-w-3xl mx-auto'>
-                <Card className='hover:border-blue-300'>
+                <Card className='hover:border-syn-function/60 hover:bg-line'>
                     <CardHeader>
                         <div className='flex items-center gap-4'>
                             <Image
@@ -28,7 +29,7 @@ const Education = () => {
                             />
                             
                             <div className='flex flex-col'>
-                                <p className='text-xs'>2024 - 2028 (expected)</p>
+                                <p className='text-xs text-syn-constant'>2024 - 2028 <span className='italic text-syn-comment'>(expected)</span></p>
                                 <CardTitle className='text-xl'>
                                     York University
                                 </CardTitle>
@@ -42,7 +43,7 @@ const Education = () => {
                         <ul className='flex flex-wrap gap-2'>
                             {courses.map((course) => (
                                 <li key={course}>
-                                    <Badge variant='secondary'>{course}</Badge>
+                                    <Badge variant='code'>{course}</Badge>
                                 </li>
                             ))}
                         </ul>

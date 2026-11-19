@@ -9,7 +9,7 @@ const resumeHref = "/AndyBanh_SoftwareDeveloper_v6.pdf"
 const ResumeCard = ({ className }: { className?: string }) => (
   <Card
     className={cn(
-      'flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-5 hover:border-blue-300',
+      'flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-5 hover:border-syn-function/60 hover:bg-line',
       className
     )}
   >

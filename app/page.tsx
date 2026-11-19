@@ -6,67 +6,65 @@ import Project from "./components/Project";
 import Skills from "./components/Skills";
 import WorkPortfolio from "./components/WorkPortfolio";
 import { Reveal } from "@/components/ui/reveal";
+import { cn } from "@/lib/utils";
 
+// One padding token for every section so the gaps between them stay identical
+// (64px mobile, 96px desktop).
+function HomeSection({
+  id,
+  className,
+  revealProps,
+  children,
+}: {
+  id?: string;
+  className?: string;
+  revealProps?: React.ComponentProps<typeof Reveal>;
+  children: React.ReactNode;
+}) {
+  return (
+    <section
+      id={id}
+      className={cn("scroll-mt-16 px-4 sm:px-8 py-8 sm:py-12", className)}
+    >
+      <Reveal {...revealProps}>{children}</Reveal>
+    </section>
+  );
+}
 
 export default function Home() {
   return (
     <div className="font-sans">
-      <section
+      <HomeSection
         id="about"
-        className="scroll-mt-16 min-h-[50vh] flex flex-col items-center justify-center px-4 sm:px-8 py-10"
+        className="min-h-[50vh] flex flex-col items-center justify-center"
+        revealProps={{ className: "w-full max-w-4xl" }}
       >
-        <Reveal className="w-full max-w-4xl">
-          <About pageHref="/about" />
-        </Reveal>
-      </section>
+        <About pageHref="/about" />
+      </HomeSection>
 
-      <section
-        id="experience"
-        className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-10"
-      >
-        <Reveal delay={200}>
-          <Experience pageHref="/experience" />
-        </Reveal>
-      </section>
+      <HomeSection id="experience" revealProps={{ delay: 200 }}>
+        <Experience pageHref="/experience" />
+      </HomeSection>
 
-      <section className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-6">
-        <Reveal>
-          <Skills />
-        </Reveal>
-      </section>
+      <HomeSection>
+        <Skills />
+      </HomeSection>
 
-      <section
-        id="portfolio"
-        className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-10"
-      >
-        <Reveal>
-          <WorkPortfolio pageHref="/portfolio" />
-        </Reveal>
-      </section>
+      <HomeSection id="portfolio">
+        <WorkPortfolio pageHref="/portfolio" />
+      </HomeSection>
 
-      <section
-        id="projects"
-        className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-10"
-      >
-        <Reveal>
-          <Project pageHref="/projects" />
-        </Reveal>
-      </section>
+      <HomeSection id="projects">
+        <Project pageHref="/projects" />
+      </HomeSection>
 
-      <section
-        id="goals"
-        className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-10"
-      >
-        <Reveal>
-          <Goals pageHref="/goals" />
-        </Reveal>
-      </section>
+      <HomeSection id="goals">
+        <Goals pageHref="/goals" />
+      </HomeSection>
 
-      <section className="scroll-mt-16 flex flex-col justify-center px-4 sm:px-8 py-6">
-        <Reveal>
-          <Education />
-        </Reveal>
-      </section>
+      <HomeSection>
+        <Education />
+      </HomeSection>
     </div>
   );
 }

@@ -52,7 +52,6 @@ export const projects: ProjectItem[] = [
     description: "Educational web app that allows user interaction through chatbot and quizzes.",
     skills: ["Next.js", "FastAPI", "LangChain", "OpenAI API"],
     github: "https://github.com/AndyyBanh/discretemath-chatbot",
-    demo: "https://youtu.be/Q2xd9Ib49Oo",
     categories: ["ai-ml", "full-stack"],
     highlights: [
       "Built a *RAG* pipeline indexing *873* chunks across Discrete Math chapters allowing for context-aware responses",

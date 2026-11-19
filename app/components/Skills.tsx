@@ -1,5 +1,6 @@
 import React from 'react'
 import { Badge } from '@/components/ui/badge'
+import { CodeComment, CodeHeading } from './SectionParts'
 import {
   AzureIcon, ClaudeIcon, CSharpIcon, DotnetIcon, FastApiIcon, Html5Icon, JavaScriptIcon, KafkaIcon,
   LangChainIcon, MongoDbIcon, NextJsIcon, PostgreSqlIcon, ReactIcon, RedisIcon, SpringBootIcon,
@@ -53,7 +54,7 @@ const SkillRow = ({
             <Badge
               key={`${skill.name}-${i}`}
               variant='outline'
-              className='gap-2 rounded-full px-4 py-2 text-sm sm:text-base [&>svg]:size-4 transition hover:border-blue-300'
+              className='gap-2 rounded-full px-4 py-2 text-sm sm:text-base [&>svg]:size-4 transition hover:border-syn-function/60 hover:bg-line'
             >
               {skill.icon} {skill.name}
             </Badge>
@@ -66,13 +67,15 @@ const SkillRow = ({
 
 const Skills = () => {
   return (
-    <div className='w-full max-w-4xl mx-auto flex flex-col gap-4'>
-        <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>Tech Stack</h2>
-        <p className='text-base text-muted-foreground max-w-2xl'>
-          The languages, frameworks, and tools I reach for when building full stack products.
-        </p>
+    <div className='w-full max-w-3xl mx-auto'>
+        <div className='mb-6 flex flex-col items-center gap-2 text-center'>
+          <CodeHeading title='Tech Stack' keyword='const' />
+          <CodeComment className='text-sm sm:text-base max-w-2xl'>
+            The languages, frameworks, and tools I reach for when building full stack products.
+          </CodeComment>
+        </div>
 
-        <div className='mt-2 flex flex-col gap-4'>
+        <div className='flex flex-col gap-4'>
           <SkillRow skills={topRow} direction='left' duration='40s' />
           <SkillRow skills={bottomRow} direction='right' duration='46s' />
         </div>

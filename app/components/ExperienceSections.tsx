@@ -3,7 +3,7 @@
 import React from 'react'
 import { useCategoryFilter } from '@/hooks/useCategoryFilter'
 import { sortByDateDesc } from '@/lib/sort'
-import { CategoryFilter, HighlightList, Logo } from './SectionParts'
+import { CategoryFilter, CodeHeading, HighlightList, Logo } from './SectionParts'
 import ResumeCard from './ResumeCard'
 import { experiences, experienceCategories } from '../data/experience'
 
@@ -14,7 +14,7 @@ const ExperienceSections = () => {
 
   return (
     <div className='w-full max-w-5xl mx-auto'>
-      <h2 className='text-3xl font-bold text-center mb-8'>Experience</h2>
+      <CodeHeading title='Experience' className='text-3xl text-center mb-8' />
 
       <ResumeCard className='max-w-2xl mx-auto mb-8' />
 
@@ -31,10 +31,10 @@ const ExperienceSections = () => {
           <li key={`${item.company}-${item.role}`} className='flex gap-4 sm:gap-6 py-8 sm:py-10'>
             <Logo src={item.logo} name={item.company} />
             <div className='min-w-0 flex-1'>
-              <h3 className='text-xl sm:text-2xl font-semibold leading-tight'>{item.role}</h3>
+              <h3 className='text-xl sm:text-2xl font-semibold leading-tight text-syn-function'>{item.role}</h3>
               <p className='mt-1 text-sm sm:text-base'>{item.company}</p>
               <p className='mt-0.5 text-xs sm:text-sm text-muted-foreground'>
-                {item.period}
+                <span className='text-syn-constant'>{item.period}</span>
                 {item.location && <> · {item.location}</>}
               </p>
               <HighlightList items={item.highlights} />
