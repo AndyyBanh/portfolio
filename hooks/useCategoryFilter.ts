@@ -2,8 +2,6 @@
 
 import { useState } from 'react'
 
-// Multi-select category filter. With nothing selected, every item is visible;
-// otherwise an item is visible if it has at least one selected category.
 export function useCategoryFilter<T extends { categories: readonly string[] }>(items: readonly T[]) {
   type C = T['categories'][number]
   const [selected, setSelected] = useState<C[]>([])

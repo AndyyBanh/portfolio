@@ -10,7 +10,6 @@ const BackButton = () => {
 
   if (pathname === "/") return null;
 
-  // Project pages go back to the project list; every other page goes home.
   const isProjectPage = pathname.startsWith("/projects/");
   const href = isProjectPage ? "/projects" : "/";
   const label = isProjectPage ? "All projects" : "Back";

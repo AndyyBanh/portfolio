@@ -7,7 +7,6 @@ import Footer from "./components/Footer";
 import BackButton from "./components/BackButton";
 import { Reveal } from "@/components/ui/reveal";
 
-// Whole site is monospace, like an editor/terminal. Italic is loaded for `// comment` lines.
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],

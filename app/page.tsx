@@ -8,8 +8,6 @@ import WorkPortfolio from "./components/WorkPortfolio";
 import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
 
-// One padding token for every section so the gaps between them stay identical
-// (64px mobile, 96px desktop).
 function HomeSection({
   id,
   className,

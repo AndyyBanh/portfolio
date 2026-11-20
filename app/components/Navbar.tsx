@@ -33,7 +33,6 @@ const socials = [
   { icon: Mail, href: "mailto:andybanhab@gmail.com", label: "Email" },
 ];
 
-// Active for the page itself and anything under it (e.g. /projects/form-coach).
 const isActive = (pathname: string, href: string) =>
   pathname === href || pathname.startsWith(`${href}/`);
 
@@ -51,7 +50,6 @@ const Navbar = () => {
           ab
         </Link>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
           {navLinks.map(({ label, href }) => (
             <Link
@@ -79,7 +77,6 @@ const Navbar = () => {
           <ModeToggle />
         </div>
 
-        {/* Mobile */}
         <div className="flex md:hidden items-center gap-1">
           <ModeToggle />
           <DropdownMenu>

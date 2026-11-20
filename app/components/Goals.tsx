@@ -7,8 +7,6 @@ import { ProgressBar } from './CoopGoals'
 import { competencies, coopTerm, personalGoals } from '../data/coopGoals'
 import { milestones } from '../data/goals'
 
-// Homepage snippet of /goals. Reads the same data as the goals page, so update
-// app/data/coopGoals.ts (progress) and app/data/goals.ts (milestones) only.
 const trackedGoals = competencies.flatMap((c) => c.goals)
 const personalTrackedGoals = personalGoals.flatMap((c) => c.goals)
 const otherMilestones = milestones.filter((m) => !m.coop)

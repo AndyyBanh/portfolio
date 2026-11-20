@@ -1,13 +1,6 @@
-// Experience entries shown on the home page timeline and the /experience page.
-//
-// To fill in from your resume:
-//   - `highlights`: one string per resume bullet (replace the [bracketed] placeholders).
-//     Wrap key phrases/metrics in *asterisks* to emphasize them, e.g. "Cut load time *40%* by ...".
-//   - `logo`: path to an image in /public (e.g. "/goodlife.png"). Without one, the company's initial is shown.
-//   - `location`: e.g. "Toronto" or "Remote". Remove the field to hide it.
-//   - `categories`: which filter buttons on /experience include this entry.
-//   - `start`: YYYY-MM. The /experience page sorts newest first by this, so array order doesn't matter there.
-//     (The home page timeline renders in array order.)
+//   - In `highlights`, wrap key phrases/metrics in *asterisks* to emphasize them, e.g. "Cut load time *40%* by ...".
+//   - Without a `logo`, the company's initial is shown.
+//   - /experience sorts newest first by `start`; the home page timeline renders in array order.
 
 import type { ExperienceItem } from "@/types"
 

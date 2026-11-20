@@ -86,7 +86,6 @@ const WorkPortfolio = ({
   showEvidence = false,
 }: {
   pageHref?: string
-  // Show feedback quotes and artifact captions (the /portfolio page only).
   showEvidence?: boolean
 }) => {
   return (

@@ -1,17 +1,8 @@
-// Project entries shown as cards (home page + /projects) and on each project's own page (/projects/<slug>).
-//
-// To fill in:
-//   - `slug`: the URL segment, e.g. "form-coach" -> /projects/form-coach. Lowercase, hyphenated, unique.
-//   - `description`: one or two sentences for the card.
-//   - `skills`: shown as tags on the cards and project page. Keep them high-level (frameworks, platforms,
-//     major infra like Kafka/Redis/PostgreSQL/Docker), ~4-5 max. No languages, test libs, or sub-libraries; the repo covers those.
-//   - `github` / `demo`: links shown on the card and project page. Remove a field to hide its link.
-//   - `period`: display text, e.g. "Jan 2026 - Mar 2026". Remove the field to hide it.
-//   - `start`: YYYY-MM. /projects sorts newest first by this; projects without it keep array order after dated ones.
-//   - `highlights`: the "Results" section of the project page, one string per bullet.
-//   - `details`: the rest of the project page. Each list becomes a section; leave a list empty to hide its section.
-//     `futureNote` is an optional line shown under "Future plans" (e.g. when there are no plans yet).
-//     `images` are optional: put files in /public/projects/<slug>/ and give their real pixel width/height.
+//   - `slug`: lowercase, hyphenated, unique.
+//   - `skills`: high-level only (frameworks, platforms, major infra like Kafka/Redis/PostgreSQL/Docker), ~4-5 max.
+//     No languages, test libs, or sub-libraries; the repo covers those.
+//   - `details`: leave a list empty to hide its section.
+//   - `images`: put files in /public/projects/<slug>/ and give their real pixel width/height.
 //   In any text, wrap key phrases/metrics in *asterisks* to emphasize them, e.g. "Streamed frames at *30 fps*".
 
 import type { ProjectItem } from "@/types"
@@ -288,6 +279,4 @@ export const projects: ProjectItem[] = [
   },
 ]
 
-// Display order for /projects and the prev/next links on project pages.
-// Newest first by `start`; undated projects keep array order after dated ones.
 export const sortedProjects = sortByDateDesc(projects, (item) => item.start)

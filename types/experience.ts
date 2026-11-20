@@ -7,7 +7,7 @@ export type ExperienceItem = {
   company: string
   period: string // display text, e.g. "Sept 2026 - Present"
   start: string // YYYY-MM, used for newest-first sorting
-  description: string // short one-liner (the home timeline tooltip)
+  description: string
   categories: ExperienceCategory[]
   logo?: string
   location?: string

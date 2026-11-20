@@ -8,7 +8,6 @@ import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { CodeComment, CodeHeading, Emphasized, HighlightList } from './SectionParts'
 import type { ProjectItem } from '@/types'
 
-// README-style section: "## About", with the hashes in comment color.
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className='flex flex-col gap-4'>
@@ -21,7 +20,6 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   )
 }
 
-// Small title + description cards (key features).
 function CardGrid({ items }: { items: { title: string; description: string }[] }) {
   return (
     <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>

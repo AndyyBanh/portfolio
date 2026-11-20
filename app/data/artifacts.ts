@@ -1,14 +1,8 @@
-// Artifact captions (COOP-2100) shown under each artifact where it lives on the site.
-//
 // Each caption is 50–150 words and follows Retell / Relate / Reflect:
 //   - Retell: what it is, its purpose, and your specific role.
-//   - Relate: the competencies it shows, listed in `competencies` (shown as tags).
+//   - Relate: the competencies it shows, listed in `competencies`.
 //   - Reflect: the result, and what you learned or would do differently.
-//
-// To fill in:
-//   - `source`: where it came from, e.g. "COOP-2100 coursework". Shown as "Artifact · {source}".
-//   - `caption`: the 50–150 word caption.
-//   - `competencies`: names must match `undergradCompetencies` exactly (a typo fails type-checking).
+// `competencies` names must match `undergradCompetencies` exactly.
 
 import type { ArtifactCaption } from "@/types"
 
@@ -42,7 +36,6 @@ export const artifacts = {
       "Effective Oral and Written Communication",
     ],
   },
-  // Shown on /portfolio with the Noble Solutions work links and the director's feedback.
   riipen: {
     source: "Riipen project · Feb – Apr 2026",
     caption:

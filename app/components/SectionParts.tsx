@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { Check } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-// Renders *phrase* segments as emphasized text.
 export function Emphasized({ text }: { text: string }) {
   return (
     <>
@@ -28,7 +27,6 @@ function toCamelCase(title: string) {
     .join('')
 }
 
-// Section heading styled as code: `fn techStack()`. Screen readers get the plain title.
 export function CodeHeading({
   title,
   as: Tag = 'h2',
@@ -52,7 +50,6 @@ export function CodeHeading({
   )
 }
 
-// A `// comment` line. `as` keeps semantics when the comment is really a heading or paragraph.
 export function CodeComment({
   as: Tag = 'p',
   className,
@@ -120,7 +117,6 @@ export function FilterPill({
   )
 }
 
-// Bulleted list of highlights; *phrases* are emphasized. Renders nothing when empty.
 export function HighlightList({ items }: { items: string[] }) {
   if (items.length === 0) return null
   return (
@@ -134,7 +130,6 @@ export function HighlightList({ items }: { items: string[] }) {
   )
 }
 
-// "Filter by …" header with an "All" pill plus one pill per category (multi-select).
 export function CategoryFilter<C extends string>({
   label,
   categories,

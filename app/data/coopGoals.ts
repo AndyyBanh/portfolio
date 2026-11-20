@@ -1,13 +1,10 @@
-// Co-op SMART goals (COOP-2100), shown in the "Now" section of /goals, and personal goals,
-// shown in the "Miscellaneous" section (milestones with `personal: true` in app/data/goals.ts).
-//
 // To log progress on a goal:
 //   1. Bump `done` (the bar fills toward `target`; it shows "Done" when done >= target).
-//   2. Add a line to the top of `log`, e.g.
+//   2. Add an entry to `log`, e.g.
 //        { date: "2026-11-14", note: "Reviewed the auth refactor PR. Noted why middleware beat route guards." },
 //      Dates are YYYY-MM-DD. Entries are shown newest first by date, so order doesn't matter.
 //
-// Leave out `target` for open-ended goals: they show a running count ("3 escalated so far") instead of a bar.
+// Leave out `target` for open-ended goals: they show a running count instead of a bar.
 
 import type { CompetencyGoals } from "@/types"
 
@@ -78,33 +75,9 @@ export const competencies: CompetencyGoals[] = [
       },
     ],
   },
-  // On hold — uncomment to show again
-  // {
-  //   name: "Agility & Adaptability",
-  //   goals: [
-  //     {
-  //       title: "Learn a team's codebases in 2 weeks",
-  //       summary: "Map out the architecture, main services, integrations and controllers, then explain them to my supervisor.",
-  //       due: "2027-01-16",
-  //       target: 1,
-  //       unit: "team",
-  //       done: 0,
-  //       log: [],
-  //     },
-  //     {
-  //       title: "Ramp up faster on each rotation",
-  //       summary: "Adapt to each new rotation team faster than the last, and refine a personal onboarding framework as I go.",
-  //       due: "2027-08-31",
-  //       target: 3,
-  //       unit: "teams",
-  //       done: 0,
-  //       log: [],
-  //     },
-  //   ],
-  // },
 ]
 
-// Personal goals shown under "Miscellaneous" (not part of the co-op). For LeetCode, `done` is the solved count.
+// For LeetCode, `done` is the solved count.
 export const personalGoals: CompetencyGoals[] = [
   {
     name: "Grow my LeetCode practice",
