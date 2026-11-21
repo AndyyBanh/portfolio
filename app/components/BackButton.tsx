@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/button";
 const BackButton = () => {
   const pathname = usePathname();
 
-  if (pathname === "/") return null;
+  const isHome = pathname === "/" || pathname === "/index";
+  if (isHome) return null;
 
   const isProjectPage = pathname.startsWith("/projects/");
   const href = isProjectPage ? "/projects" : "/";
