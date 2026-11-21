@@ -74,9 +74,11 @@ export const projects: ProjectItem[] = [
         "The outbox job assumes one instance per service. Two copies would publish the same events twice (safely ignored, but wasted work).",
         "Fraud detection is three fixed rules, not a learned model.",
       ],
-      future: [],
-      futureNote:
-        "Nothing planned at the moment. As I learn more, I'll come back and keep building on it.",
+      future: [
+        "Add *deposit* and *withdraw* endpoints, so accounts can be funded and cashed out instead of only sending money to each other",
+        "Set up *Dependabot* to keep the Maven dependencies up to date and flag known security vulnerabilities",
+        "Deploy it to the cloud, with *Terraform* for the infrastructure and a *CI/CD* pipeline that tests and ships each change",
+      ],
       images: [
         {
           src: "/projects/financial-api-gateway/architecture.png",
