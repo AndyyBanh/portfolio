@@ -44,7 +44,7 @@ export const experiences: ExperienceItem[] = [
   {
     role: "BSc Computer Science",
     company: "York University",
-    period: "Sep 2024 - 2028 (expected)",
+    period: "Sep 2024 - 2029 (expected)",
     start: "2024-09",
     description: "Third-year Computer Science student at York University.",
     categories: ["education"],
