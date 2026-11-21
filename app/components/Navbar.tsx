@@ -1,9 +1,8 @@
 "use client"
 
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu } from "lucide-react";
+import { Github, Linkedin, Mail, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -17,22 +16,25 @@ import { ModeToggle } from "./ModeToggle";
 
 const navLinks = [
   { label: "About", href: "/about" },
-  { label: "Goals", href: "/goals" },
   { label: "Experience", href: "/experience" },
   { label: "Projects", href: "/projects" },
   { label: "Portfolio", href: "/portfolio" },
+  { label: "Goals", href: "/goals" },
   { label: "Contact", href: "/contact" },
 ];
 
 const socials = [
-  { icon: FaGithub, href: "https://github.com/AndyyBanh", label: "Github" },
+  { icon: Github, href: "https://github.com/AndyyBanh", label: "Github" },
   {
-    icon: FaLinkedin,
+    icon: Linkedin,
     href: "https://www.linkedin.com/in/andy-banh-a643a0278/",
     label: "Linkedin",
   },
-  { icon: FaEnvelope, href: "mailto:andybanhab@gmail.com", label: "Email" },
+  { icon: Mail, href: "mailto:andybanhab@gmail.com", label: "Email" },
 ];
+
+const isActive = (pathname: string, href: string) =>
+  pathname === href || pathname.startsWith(`${href}/`);
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -42,22 +44,21 @@ const Navbar = () => {
       <nav className="flex h-16 w-full items-center justify-between px-4 sm:px-10">
         <Link
           href="/"
-          className="font-mono text-lg font-bold tracking-tight"
+          className="font-mono text-lg font-bold tracking-tight text-syn-keyword"
           aria-label="Home"
         >
           ab
         </Link>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
           {navLinks.map(({ label, href }) => (
             <Link
               key={href}
               href={href}
-              aria-current={pathname === href ? "page" : undefined}
+              aria-current={isActive(pathname, href) ? "page" : undefined}
               className={cn(
                 "text-sm transition-colors hover:text-foreground",
-                pathname === href ? "text-foreground font-medium" : "text-muted-foreground"
+                isActive(pathname, href) ? "text-syn-keyword font-medium" : "text-muted-foreground"
               )}
             >
               {label}
@@ -76,7 +77,6 @@ const Navbar = () => {
           <ModeToggle />
         </div>
 
-        {/* Mobile */}
         <div className="flex md:hidden items-center gap-1">
           <ModeToggle />
           <DropdownMenu>
@@ -90,8 +90,8 @@ const Navbar = () => {
                 <DropdownMenuItem key={href} asChild>
                   <Link
                     href={href}
-                    aria-current={pathname === href ? "page" : undefined}
-                    className={cn(pathname === href && "font-medium text-foreground")}
+                    aria-current={isActive(pathname, href) ? "page" : undefined}
+                    className={cn(isActive(pathname, href) && "font-medium text-foreground")}
                   >
                     {label}
                   </Link>

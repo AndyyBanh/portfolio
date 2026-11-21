@@ -1,13 +1,6 @@
-// Experience entries shown on the home page timeline and the /experience page.
-//
-// To fill in from your resume:
-//   - `highlights`: one string per resume bullet (replace the [bracketed] placeholders).
-//     Wrap key phrases/metrics in *asterisks* to emphasize them, e.g. "Cut load time *40%* by ...".
-//   - `logo`: path to an image in /public (e.g. "/goodlife.png"). Without one, the company's initial is shown.
-//   - `location`: e.g. "Toronto" or "Remote". Remove the field to hide it.
-//   - `categories`: which filter buttons on /experience include this entry.
-//   - `start`: YYYY-MM. The /experience page sorts newest first by this, so array order doesn't matter there.
-//     (The home page timeline renders in array order.)
+//   - In `highlights`, wrap key phrases/metrics in *asterisks* to emphasize them, e.g. "Cut load time *40%* by ...".
+//   - Without a `logo`, the company's initial is shown.
+//   - /experience sorts newest first by `start`; the home page timeline renders in array order.
 
 import type { ExperienceItem } from "@/types"
 
@@ -23,12 +16,13 @@ export const experiences: ExperienceItem[] = [
     company: "GoodLife Fitness",
     period: "Sept 2026 - Present",
     start: "2026-09",
-    description: ".NET Developer",
+    description: "Developing software as a .NET developer on the Member Applications team.",
     categories: ["engineering"],
     logo: "/GoodLifeFitness_Logo.jpeg",
     location: "Remote",
     highlights: [
-      ".NET Developer",
+      "Supported the decommissioning of a legacy database by removing dependencies on its APIs from .NET services",
+      "Improved unit test coverage from *8.5% to 83%* for core authentication service by identifying coverage gaps",
     ],
   },
   {
@@ -36,7 +30,7 @@ export const experiences: ExperienceItem[] = [
     company: "Noble Solutions via Riipen",
     period: "Feb 2026 - April 2026",
     start: "2026-02",
-    description: "Contributed to small real estate platform, earning 5-star feedback on Riipen",
+    description: "Contributed to the development of a real estate platform, earning 5-star client feedback on Riipen.",
     categories: ["engineering"],
     logo: "/Riipen_Logo.jpeg",
     location: "Remote",
@@ -48,11 +42,11 @@ export const experiences: ExperienceItem[] = [
     ],
   },
   {
-    role: "B.S Computer Science",
+    role: "BSc Computer Science",
     company: "York University",
     period: "Sep 2024 - 2028 (expected)",
     start: "2024-09",
-    description: "being studious",
+    description: "Third-year Computer Science student at York University.",
     categories: ["education"],
     logo: "/yorkulogo.jpg",
     location: "Toronto",
@@ -65,7 +59,7 @@ export const experiences: ExperienceItem[] = [
     company: "Self-employed",
     period: "April 2025 - Present",
     start: "2025-04",
-    description: "Founded an ecommerce business, managing full operations, selling over 500+ products",
+    description: "Founded and operate an e-commerce business, managing end-to-end operations and selling 500+ products.",
     categories: ["entrepreneurial"],
     location: "Remote",
     highlights: [

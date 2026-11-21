@@ -1,5 +1,3 @@
-// Roadmap milestones shared by the /goals page (GoalsRoadmap) and the homepage snippet (Goals).
-
 import type { Milestone } from "@/types"
 
 export const milestones: Milestone[] = [

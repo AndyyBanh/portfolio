@@ -18,7 +18,6 @@ async function getContributions(user: string): Promise<Activity[] | null> {
 
 const GithubChart = async ({ user }: { user: string }) => {
   const data = await getContributions(user)
-  // Service down → no chart; the rest of the page is unaffected.
   if (!data) return null
   return <ContributionCalendar data={data} />
 }

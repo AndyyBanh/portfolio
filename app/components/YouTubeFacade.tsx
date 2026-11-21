@@ -4,7 +4,6 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { Play } from 'lucide-react'
 
-/* Shows the thumbnail + a play button and only loads YouTube's ~1MB player once clicked. */
 const YouTubeFacade = ({ id, title }: { id: string; title: string }) => {
   const [playing, setPlaying] = useState(false)
 

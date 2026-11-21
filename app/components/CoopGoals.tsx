@@ -11,7 +11,7 @@ import { competencies, coopTerm } from '../data/coopGoals'
 export const ProgressBar = ({ label, done, target, unit }: { label: string; done: number; target?: number; unit: string }) => {
   if (target === undefined) {
     return (
-      <span className='text-xs tabular-nums text-muted-foreground'>
+      <span className='text-xs tabular-nums text-syn-constant'>
         {done} {unit} so far
       </span>
     )
@@ -29,7 +29,7 @@ export const ProgressBar = ({ label, done, target, unit }: { label: string; done
       >
         <div className='h-full rounded-full bg-primary transition-[width]' style={{ width: `${pct}%` }} />
       </div>
-      <span className='shrink-0 text-xs tabular-nums text-muted-foreground'>
+      <span className='shrink-0 text-xs tabular-nums text-syn-constant'>
         {done} / {target} {unit}
       </span>
       {done >= target && <Badge variant='secondary'>Done</Badge>}
@@ -45,7 +45,7 @@ const GoalProgress = ({ goal }: { goal: CoopGoal }) => {
     <div className='flex flex-col gap-2'>
       <div className='flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1'>
         <p className='text-sm font-medium'>{title}</p>
-        <p className='text-xs text-muted-foreground'>Due {formatDate(due)}</p>
+        <p className='text-xs text-syn-constant'>Due {formatDate(due)}</p>
       </div>
       <p className='text-sm text-muted-foreground'>{summary}</p>
 
@@ -73,7 +73,7 @@ const GoalProgress = ({ goal }: { goal: CoopGoal }) => {
 
 export const GoalCard = ({ competency }: { competency: CompetencyGoals }) => (
   <HoverFocusItem asChild>
-    <Card className='gap-5 p-5 hover:border-blue-300'>
+    <Card className='gap-5 p-5 hover:border-syn-function/60 hover:bg-line'>
       <CardTitle className='text-base'>{competency.name}</CardTitle>
       {competency.reflection && (
         <div className='flex flex-col gap-1.5'>

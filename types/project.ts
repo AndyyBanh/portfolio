@@ -1,15 +1,33 @@
-import type { projectCategories } from '@/app/data/projects'
+import type { ArtifactCaption } from './artifact'
 
-export type ProjectCategory = (typeof projectCategories)[number]['id']
+export type ProjectImage = {
+  src: string // path under /public, e.g. "/projects/form-coach/workout.png"
+  alt: string
+  caption?: string
+  width: number
+  height: number
+}
+
+export type ProjectDetails = {
+  about: string[]
+  features: { title: string; description: string }[]
+  stack: { name: string; why: string }[]
+  limitations: string[]
+  future: string[]
+  futureNote?: string
+  images?: ProjectImage[]
+  artifact?: ArtifactCaption // shown under the images
+}
 
 export type ProjectItem = {
+  slug: string
   title: string
-  description: string // short summary for the home page cards (not shown on /projects)
+  description: string
   skills: string[]
   github?: string
   demo?: string
-  categories: ProjectCategory[]
   period?: string // display text, e.g. "Jan 2026 - Mar 2026"
   start?: string // YYYY-MM, used for newest-first sorting
   highlights: string[]
+  details: ProjectDetails
 }

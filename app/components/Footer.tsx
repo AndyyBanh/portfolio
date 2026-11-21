@@ -1,33 +1,32 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { CodeComment } from "./SectionParts";
 
 const Footer = () => (
-  <footer className="mt-20 py-8 flex flex-col items-center gap-3">
+  <footer className="mt-12 py-8 flex flex-col items-center gap-3">
     <div className="flex items-center gap-6">
       <a
         href="https://github.com/AndyyBanh"
         aria-label="Github"
-        className="transition hover:scale-120"
+        className="text-muted-foreground transition hover:scale-120 hover:text-syn-function"
       >
-        <FaGithub size={22} />
+        <Github size={22} />
       </a>
       <a
         href="https://www.linkedin.com/in/andy-banh-a643a0278/"
         aria-label="Linkedin"
-        className="transition hover:scale-120"
+        className="text-muted-foreground transition hover:scale-120 hover:text-syn-function"
       >
-        <FaLinkedin size={22} />
+        <Linkedin size={22} />
       </a>
       <a
         href="mailto:andybanhab@gmail.com"
         aria-label="Email"
-        className="transition hover:scale-120"
+        className="text-muted-foreground transition hover:scale-120 hover:text-syn-function"
       >
-        <FaEnvelope size={22} />
+        <Mail size={22} />
       </a>
     </div>
-    <p className="text-sm text-muted-foreground">
-      © 2026 Andy Banh. All rights reserved.
-    </p>
+    <CodeComment className="text-sm">© 2026 Andy Banh. All rights reserved.</CodeComment>
   </footer>
 );
 

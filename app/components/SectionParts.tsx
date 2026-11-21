@@ -3,13 +3,12 @@ import Image from 'next/image'
 import { Check } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-// Renders *phrase* segments as emphasized text.
 export function Emphasized({ text }: { text: string }) {
   return (
     <>
       {text.split(/(\*[^*]+\*)/g).map((part, i) =>
         part.startsWith('*') && part.endsWith('*') && part.length > 2 ? (
-          <em key={i} className='text-blue-600 dark:text-blue-400'>
+          <em key={i} className='text-syn-string'>
             {part.slice(1, -1)}
           </em>
         ) : (
@@ -17,6 +16,54 @@ export function Emphasized({ text }: { text: string }) {
         )
       )}
     </>
+  )
+}
+
+// "Tech Stack" -> "techStack"
+function toCamelCase(title: string) {
+  const words = title.replace(/[^A-Za-z0-9 ]/g, '').split(/\s+/).filter(Boolean)
+  return words
+    .map((w, i) => (i === 0 ? w.toLowerCase() : w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()))
+    .join('')
+}
+
+export function CodeHeading({
+  title,
+  as: Tag = 'h2',
+  keyword = 'fn',
+  className,
+}: {
+  title: string
+  as?: 'h1' | 'h2' | 'h3'
+  keyword?: string
+  className?: string
+}) {
+  return (
+    <Tag className={cn('font-mono text-2xl font-bold tracking-tight', className)}>
+      <span aria-hidden>
+        <span className='text-syn-keyword'>{keyword}</span>{' '}
+        <span className='text-foreground'>{toCamelCase(title)}</span>
+        <span className='font-normal text-muted-foreground'>()</span>
+      </span>
+      <span className='sr-only'>{title}</span>
+    </Tag>
+  )
+}
+
+export function CodeComment({
+  as: Tag = 'p',
+  className,
+  children,
+}: {
+  as?: 'p' | 'h2' | 'span'
+  className?: string
+  children: React.ReactNode
+}) {
+  return (
+    <Tag className={cn('font-mono italic text-syn-comment', className)}>
+      <span aria-hidden className='not-italic select-none'>{'// '}</span>
+      {children}
+    </Tag>
   )
 }
 
@@ -70,7 +117,6 @@ export function FilterPill({
   )
 }
 
-// Bulleted list of highlights; *phrases* are emphasized. Renders nothing when empty.
 export function HighlightList({ items }: { items: string[] }) {
   if (items.length === 0) return null
   return (
@@ -84,7 +130,6 @@ export function HighlightList({ items }: { items: string[] }) {
   )
 }
 
-// "Filter by …" header with an "All" pill plus one pill per category (multi-select).
 export function CategoryFilter<C extends string>({
   label,
   categories,

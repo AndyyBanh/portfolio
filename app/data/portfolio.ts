@@ -1,15 +1,6 @@
-// Work samples shown on the home page portfolio section and the /portfolio page.
-//
-// To fill in:
 //   - `company`: must match a `company` in ./experience.ts — role, period and logo are pulled from there.
-//   - `links`: one entry per page you worked on.
-//       - `title`: name of the page/feature, e.g. "Property listings page".
-//       - `href`: full URL (https://...). The whole row links there. Leave it out to show "Link coming soon".
-//       - `note`: short line on what you built, e.g. "Built search filters and pagination".
-//   - An entry with `links: []` shows "Work samples coming soon."
-//   - `feedback` (optional, /portfolio only): a quote from a supervisor/client, shared with their permission.
-//       - `rating`: out of 5, shown as stars. `image`: path in /public to a screenshot of the original.
-//   - `artifact` (optional, /portfolio only): a COOP-2100 artifact caption from ./artifacts.ts.
+//   - A link without `href` shows "Link coming soon"; an entry with `links: []` shows "Work samples coming soon."
+//   - `feedback`: shared with the person's permission. `rating` is out of 5.
 
 import type { PortfolioEntry } from "@/types"
 import { artifacts } from "./artifacts"
@@ -38,9 +29,5 @@ export const portfolio: PortfolioEntry[] = [
       image: "/Riipen_Feedback.png",
     },
     artifact: artifacts.riipen,
-  },
-  {
-    company: "GoodLife Fitness",
-    links: [],
   },
 ]

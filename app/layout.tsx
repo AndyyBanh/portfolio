@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Geist_Mono } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/Theme-Provider";
 import Navbar from "./components/Navbar";
@@ -7,14 +7,11 @@ import Footer from "./components/Footer";
 import BackButton from "./components/BackButton";
 import { Reveal } from "@/components/ui/reveal";
 
-const inter = Inter({
-  variable: "--font-inter",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -29,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${geistMono.variable} antialiased min-h-dvh flex flex-col`}>
+      <body className={`${jetbrainsMono.variable} font-sans antialiased min-h-dvh flex flex-col`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
