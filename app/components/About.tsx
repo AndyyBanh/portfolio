@@ -30,7 +30,7 @@ const About = ({ pageHref }: { pageHref?: string }) => {
         </div>
 
         <CodeComment as='h2' className='text-lg sm:text-2xl font-medium'>
-          typical cs student who spends countless hours on leetcode and building
+          typical cs student grinding leetcode, obsessed with backend &amp; distributed systems
         </CodeComment>
 
         <p className='text-base sm:text-lg max-w-2xl'>
