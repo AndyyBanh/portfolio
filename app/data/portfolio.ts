@@ -30,8 +30,4 @@ export const portfolio: PortfolioEntry[] = [
     },
     artifact: artifacts.riipen,
   },
-  {
-    company: "GoodLife Fitness",
-    links: [],
-  },
 ]

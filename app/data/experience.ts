@@ -21,7 +21,8 @@ export const experiences: ExperienceItem[] = [
     logo: "/GoodLifeFitness_Logo.jpeg",
     location: "Remote",
     highlights: [
-      ".NET Developer",
+      "Supported the decommissioning of a legacy database by removing dependencies on its APIs from .NET services",
+      "Improved unit test coverage from *8.5% to 83%* for core authentication service by identifying coverage gaps",
     ],
   },
   {

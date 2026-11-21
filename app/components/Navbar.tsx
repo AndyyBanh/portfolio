@@ -16,10 +16,10 @@ import { ModeToggle } from "./ModeToggle";
 
 const navLinks = [
   { label: "About", href: "/about" },
-  { label: "Goals", href: "/goals" },
   { label: "Experience", href: "/experience" },
   { label: "Projects", href: "/projects" },
   { label: "Portfolio", href: "/portfolio" },
+  { label: "Goals", href: "/goals" },
   { label: "Contact", href: "/contact" },
 ];
 

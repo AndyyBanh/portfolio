@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, ExternalLink, Github } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardDescription, CardTitle } from '@/components/ui/card'
+import ArtifactCaption from './ArtifactCaption'
 import { CodeComment, CodeHeading, Emphasized, HighlightList } from './SectionParts'
 import type { ProjectItem } from '@/types'
 
@@ -137,6 +138,7 @@ const ProjectDetail = ({
               )}
             </figure>
           ))}
+          {details.artifact && <ArtifactCaption {...details.artifact} />}
         </Section>
       )}
 

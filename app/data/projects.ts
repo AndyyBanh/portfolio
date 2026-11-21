@@ -7,6 +7,7 @@
 
 import type { ProjectItem } from "@/types"
 import { sortByDateDesc } from "@/lib/sort"
+import { artifacts } from "./artifacts"
 
 export const projects: ProjectItem[] = [
   {
@@ -92,6 +93,7 @@ export const projects: ProjectItem[] = [
           height: 512,
         },
       ],
+      artifact: artifacts.gatewayDiagrams,
     },
   },
   {

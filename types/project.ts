@@ -1,3 +1,5 @@
+import type { ArtifactCaption } from './artifact'
+
 export type ProjectImage = {
   src: string // path under /public, e.g. "/projects/form-coach/workout.png"
   alt: string
@@ -14,6 +16,7 @@ export type ProjectDetails = {
   future: string[]
   futureNote?: string
   images?: ProjectImage[]
+  artifact?: ArtifactCaption // shown under the images
 }
 
 export type ProjectItem = {
