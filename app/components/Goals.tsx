@@ -49,9 +49,10 @@ const Goals = ({ pageHref }: { pageHref?: string }) => {
                     </div>
                   ))}
                 {goals.map((goal) => (
-                  <div key={goal.title} className='flex flex-col gap-1'>
+                  <div key={goal.title} className='flex flex-col gap-1.5'>
                     <CardTitle className='text-base'>{goal.title}</CardTitle>
                     <CardDescription>{goal.description}</CardDescription>
+                    {goal.progress && <ProgressBar label={goal.title} {...goal.progress} />}
                   </div>
                 ))}
               </Card>

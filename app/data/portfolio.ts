@@ -12,12 +12,7 @@ export const portfolio: PortfolioEntry[] = [
       {
         title: "Property listing page",
         href: "https://hausq.ca/listing/C14142050/36-macpherson-avenue-toronto-c02",
-        note: "Built an investment index that scores each property's value, and added caching to speed up page loads",
-      },
-      {
-        title: "Mortgage calculator",
-        href: "https://hausq.ca/mortgage-calculator",
-        note: "Contributed to the UI redesign and built cards that surface key real-estate metrics",
+        note: "Built an investment index that scores each property's value, and added caching that cut latency 90% across 10k+ properties",
       },
     ],
     feedback: {

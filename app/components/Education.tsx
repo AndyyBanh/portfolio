@@ -29,7 +29,7 @@ const Education = () => {
                             />
                             
                             <div className='flex flex-col'>
-                                <p className='text-xs text-syn-constant'>2024 - 2028 <span className='italic text-syn-comment'>(expected)</span></p>
+                                <p className='text-xs text-syn-constant'>2024 - 2029 <span className='italic text-syn-comment'>(expected)</span></p>
                                 <CardTitle className='text-xl'>
                                     York University
                                 </CardTitle>

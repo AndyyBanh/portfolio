@@ -22,7 +22,7 @@ export const experiences: ExperienceItem[] = [
     location: "Remote",
     highlights: [
       "Supported the decommissioning of a legacy database by removing dependencies on its APIs from .NET services",
-      "Improved unit test coverage from *8.5% to 83%* for core authentication service by identifying coverage gaps",
+      "Raised unit test coverage to *83%* for a core authentication service by identifying coverage gaps",
     ],
   },
   {
@@ -44,7 +44,7 @@ export const experiences: ExperienceItem[] = [
   {
     role: "BSc Computer Science",
     company: "York University",
-    period: "Sep 2024 - 2028 (expected)",
+    period: "Sep 2024 - 2029 (expected)",
     start: "2024-09",
     description: "Third-year Computer Science student at York University.",
     categories: ["education"],
