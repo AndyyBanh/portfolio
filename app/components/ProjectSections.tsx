@@ -8,7 +8,7 @@ const ProjectSections = () => (
   <div className='w-full max-w-4xl mx-auto'>
     <div className='mb-8 flex flex-col items-center gap-2 text-center'>
       <CodeHeading title='Projects' className='text-3xl' />
-      <CodeComment>Click a project to see what it does, how it&apos;s built, and why.</CodeComment>
+      <CodeComment>All solo projects. Click a project to see what it does, how it&apos;s built, and why.</CodeComment>
     </div>
 
     <HoverFocusGroup asChild>

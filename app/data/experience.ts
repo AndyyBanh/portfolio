@@ -22,7 +22,7 @@ export const experiences: ExperienceItem[] = [
     location: "Remote",
     highlights: [
       "Supported the decommissioning of a legacy database by removing dependencies on its APIs from .NET services",
-      "Improved unit test coverage from *8.5% to 83%* for core authentication service by identifying coverage gaps",
+      "Raised unit test coverage to *83%* for a core authentication service by identifying coverage gaps",
     ],
   },
   {
