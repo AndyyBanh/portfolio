@@ -3,7 +3,7 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { HoverFocusGroup, HoverFocusItem } from '@/components/ui/hover-focus'
 import { cn } from '@/lib/utils'
-import CoopGoals, { GoalCard } from './CoopGoals'
+import CoopGoals, { GoalCard, ProgressBar } from './CoopGoals'
 import { CodeComment } from './SectionParts'
 import { personalGoals } from '../data/coopGoals'
 import { milestones } from '../data/goals'
@@ -24,7 +24,7 @@ const GoalsRoadmap = () => {
         </CodeComment>
         <h1 className='text-3xl sm:text-4xl font-bold tracking-tight'>Where I&apos;m headed</h1>
         <p className='text-base sm:text-lg leading-relaxed text-muted-foreground'>
-          My road to becoming a software engineer and the best version of myself. These are the goals I&apos;m chasing now and next, and I update my progress as I go.
+          My path to landing a second co-op and a new grad role in tech, while deepening my knowledge of distributed systems.
         </p>
       </header>
 
@@ -66,6 +66,7 @@ const GoalsRoadmap = () => {
                       <Card className='gap-2 p-5 hover:border-syn-function/60 hover:bg-line'>
                         <CardTitle className='text-base'>{goal.title}</CardTitle>
                         <CardDescription>{goal.description}</CardDescription>
+                        {goal.progress && <ProgressBar label={goal.title} {...goal.progress} />}
                         <ul className='mt-1 list-disc pl-4 text-sm text-muted-foreground space-y-1'>
                           {goal.steps.map((step, i) => (
                             <li key={i}>{step}</li>

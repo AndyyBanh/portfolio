@@ -5,7 +5,12 @@ export type Milestone = {
   status: Status
   coop?: boolean
   personal?: boolean
-  goals: { title: string; description: string; steps: string[] }[]
+  goals: {
+    title: string
+    description: string
+    progress?: { done: number; target: number; unit: string }
+    steps: string[]
+  }[]
 }
 
 export type ProgressEntry = { date: string; note: string }

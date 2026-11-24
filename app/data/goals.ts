@@ -8,12 +8,13 @@ export const milestones: Milestone[] = [
     goals: [],
   },
   {
-    when: "Expected 2029",
+    when: "Expected Dec 2029",
     status: "future",
     goals: [
       {
         title: "Graduate from York University",
-        description: "Finish my BSc in Computer Science with strong co-op experience.",
+        description: "Finish my BSc in Computer Science with strong co-op experience. Entering my 3rd year, on pause for my co-op.",
+        progress: { done: 2, target: 4, unit: "years" },
         steps: ["Land a second co-op/internship for Summer 2028"],
       },
     ],
@@ -22,12 +23,6 @@ export const milestones: Milestone[] = [
     when: "Miscellaneous",
     status: "future",
     personal: true,
-    goals: [
-      {
-        title: "Go deeper on system design",
-        description: "Currently reading Designing Data-Intensive Applications (DDIA) by Martin Kleppmann to understand how scalable, reliable systems are built.",
-        steps: ["Finish reading DDIA"],
-      },
-    ],
+    goals: [],
   },
 ]
