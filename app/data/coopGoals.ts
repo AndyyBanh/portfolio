@@ -63,7 +63,7 @@ export const competencies: CompetencyGoals[] = [
   {
     name: "Emotional Self-Awareness",
     reflection:
-      "Early in my co-op I picked up a ticket on a legacy repository with deprecated dependencies and features that no longer worked. I spent a long time trying to piece it together on my own before I noticed my frustration and asked a teammate, who gave me the context I needed to find a solution. It showed me that I tend to try to figure everything out myself. I'm working on this competency so I notice sooner when I'm stuck and how it affects my work, and so I make full use of the experienced teammates around me.",
+      "Early in my co-op I picked up a ticket on a legacy repository with deprecated dependencies and features that no longer worked. I spent a long time trying to piece it together on my own before I noticed my frustration and asked a teammate, who gave me the context I needed to find a solution. It showed me that I tend to try to figure everything out myself. I'm working on this competency so I notice sooner when I'm stuck and how it affects my work, and so I see asking for help as a chance to learn from the experienced teammates around me.",
     goals: [
       {
         title: "Escalate blockers sooner",
