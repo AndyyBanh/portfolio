@@ -8,7 +8,7 @@ import { portfolio } from '../data/portfolio'
 import type { PortfolioFeedback, PortfolioLink } from '@/types'
 
 function LinkRow({ link }: { link: PortfolioLink }) {
-  const meta = [link.note, !link.href && 'Link coming soon']
+  const meta = [link.note, !link.href && !link.internal && 'Link coming soon']
     .filter(Boolean)
     .join(' · ')
 

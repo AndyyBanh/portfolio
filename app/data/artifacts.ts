@@ -29,6 +29,12 @@ export const artifacts = {
       "Reflective essay, “Out of reach.” A short essay that draws on my experiences so far, covering my strengths, my weaknesses and how I plan to address them, my values, and how I learn. You may see yourself in my journey, my strengths, my weaknesses, and the values I hold. It matters because it's a deeper look at who I am as a person, a short piece to get to know me.",
     competencies: ["Communication Skills", "Life-Long Learning"],
   },
+  goodlife: {
+    source: "GoodLife co-op · Sept 2026 – Present",
+    caption:
+      "Software Developer Co-op, Member Applications team at GoodLife Fitness. I helped simplify and strengthen our member services by removing a legacy database's API from several .NET services as part of its decommissioning, and by raising unit test coverage on a core authentication service to 83%. Together, these changes made our applications less complex, cheaper to run, and safer to change.",
+    competencies: ["Problem Analysis", "Use of Engineering Tools", "Economics and Project Management"],
+  },
   riipen: {
     source: "Riipen project · Feb – Apr 2026",
     caption:

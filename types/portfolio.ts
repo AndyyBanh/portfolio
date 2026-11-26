@@ -4,6 +4,8 @@ export type PortfolioLink = {
   title: string
   href?: string
   note?: string
+  /** Internal/proprietary work with no public link — shown with just its note, no "Link coming soon". */
+  internal?: boolean
 }
 
 export type PortfolioFeedback = {
