@@ -38,7 +38,7 @@ export const artifacts = {
   riipen: {
     source: "Riipen project · Feb – Apr 2026",
     caption:
-      "Software Developer Intern, Noble Solutions via Riipen. I took on a wide range of responsibilities on a real estate platform: researching technologies and solutions, creating implementation plans, and helping build the website. The work pushed me to grow my problem analysis, design, and investigation skills, and I was grateful to receive a 5 out of 5 rating from the company's director.",
+      "Software Developer Intern, Noble Solutions via Riipen. On a real estate platform, I researched technologies, wrote implementation plans, and built features for the website. My main result was the property listing page: I built an investment index that scores each property's value, and added caching that cut latency by 90% across 10k+ properties. The work grew my problem analysis, design, and investigation skills, and the company's director rated it 5 out of 5.",
     competencies: ["Investigation", "Design", "Problem Analysis"],
   },
   gatewayDiagrams: {
@@ -48,3 +48,11 @@ export const artifacts = {
     competencies: ["Design", "Problem Analysis", "Use of Engineering Tools"],
   },
 } satisfies Record<string, ArtifactCaption>
+
+export const artifactIndex = [
+  { ...artifacts.whyMe, kind: "video", title: "Why Me", href: "/about#why-me" },
+  { ...artifacts.essay, kind: "essay", title: "Out of reach", href: "/about#essay" },
+  { ...artifacts.goodlife, kind: "co-op", title: "GoodLife Fitness", href: "/portfolio" },
+  { ...artifacts.riipen, kind: "riipen", title: "Noble Solutions", href: "/portfolio" },
+  { ...artifacts.gatewayDiagrams, kind: "project", title: "Financial API Gateway", href: "/projects/financial-api-gateway" },
+]
