@@ -17,13 +17,13 @@ export default function AboutPage() {
         </Reveal>
       </section>
 
-      <section className="flex flex-col px-4 sm:px-8 py-10">
+      <section id="why-me" className="scroll-mt-16 flex flex-col px-4 sm:px-8 py-10">
         <Reveal>
           <WhyMeVideo />
         </Reveal>
       </section>
 
-      <section className="flex flex-col px-4 sm:px-8 py-10">
+      <section id="essay" className="scroll-mt-16 flex flex-col px-4 sm:px-8 py-10">
         <Reveal>
           <AboutEssay />
         </Reveal>

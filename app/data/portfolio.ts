@@ -28,7 +28,7 @@ export const portfolio: PortfolioEntry[] = [
     company: "Noble Solutions via Riipen",
     links: [
       {
-        title: "Property listing page",
+        title: "Cut property listing latency 90% across 10k+ properties",
         href: "https://hausq.ca/listing/C14142050/36-macpherson-avenue-toronto-c02",
         note: "Built an investment index that scores each property's value, and added caching that cut latency 90% across 10k+ properties.",
       },
